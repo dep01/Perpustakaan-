@@ -27,9 +27,7 @@ $jk = $d['idJkelamin']
                 <ul>
             </td>
             <td width="500">
-            <form action="" method="POST">
-                <input type="hidden" name="id" value="">
-                        
+            <form action="" method="POST"> 
             <table border="0">
             </td>
         <tr>

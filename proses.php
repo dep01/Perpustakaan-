@@ -1,18 +1,29 @@
 <?php
-// 3. File proses form
+// File proses form
 include "koneksi.php";
 
 $nama = $_POST["nama"];
 $JKelamin = $_POST["jenis_kelamin"];
 $alamat = $_POST["alamat"];
 $telp = $_POST["noHP"];
+$proses = $_POST["proses"];
+$id = $_POST["id"];
+if ($proses == "insert"){
+    $sql = "INSERT INTO manggota(namaAnggota, idJkelamin, alamat, noHP) VALUES('$nama', '$JKelamin', '$alamat', '$telp')";
+} else {
+    $sql = "UPDATE manggota SET namaAnggota = '$nama',noHP = '$telp',alamat ='$alamat',idjkelamin = '$JKelamin' where idanggota = '$id'";
+}
 
-// 4. Buat query insert datanya
-$sql = "INSERT INTO manggota(namaAnggota, idJkelamin, alamat, noHP) VALUES('$nama', '$JKelamin', '$alamat', '$telp')";
+// Buat query insert datanya
 
-// 5. Jalankan query
+
+// Jalankan query
 // isset digunakan untuk jika salah satu inputan tidak ter-input data tidak masuk ke database
 $hasil = mysqli_query($conn, $sql);
+if (!$hasil) {
+    printf("Error: %s\n", mysqli_error($conn));
+    exit();
+}
 if ($hasil){
     echo "
         <script>

@@ -16,33 +16,32 @@
         <ul>
         </td>
         <td width="500">
-            <a href="input.php?proses=<?php echo 'insert';?>">Input Anggota</a>
+            <a href="input.php?proses=<?php echo 'insert';?>">Input Buku</a>
             <table border="1" >
         <thead>  
           <tr>
             <th >No</th>
-            <th >Nama Anggota</th>
-            <th >Jenis Kelamin</th>
-            <th >Alamat</th>
-            <th >Nomor HP</th>
-            <th >Aksi</th>
+            <th >Judul Buku</th>
+            <th >Jangka Waktu</th>
+            <th >Denda Per-Hari</th>
+            <th >Tanggal Terbit</th>
           </tr>
         </thead>
 <tbody>
 <?php 
 include 'koneksi.php';
 $no = 1;
-$data = mysqli_query($conn, "SELECT * FROM manggota");
+$data = mysqli_query($conn, "SELECT * FROM mbuku");
 while($d = mysqli_fetch_array($data)){
 ?>
 	<tr>
 		<td><?php echo $no++; ?></td>
-		<td><?php echo $d['namaAnggota']; ?></td>
-        <td><?php echo $d['idJkelamin']; ?></td>
-	    <td><?php echo $d['alamat']; ?></td>
-	    <td><?php echo $d['noHP']; ?></td>
+		<td><?php echo $d['judulBuku']; ?></td>
+        <td><?php echo $d['jangkaWaktu']; ?></td>
+	    <td><?php echo $d['dendaPerhari']; ?></td>
+	    <td><?php echo $d['tglTerbit']; ?></td>
         <td>
-            <a href="input.php?id=<?php echo $d["idAnggota"];?>&proses=update">Ubah</a> | <a href="hapus.php">Hapus</a>
+            <a href="input.php?id=<?php echo $d["idBuku"];?>&proses=update">Ubah</a> | <a href="hapus.php">Hapus</a>
         </td> 
 	</tr>
 <?php }	?>

@@ -11,12 +11,12 @@
         <td width = "200">
         <ul>
             <li><a href="">Anggota</a></li>
-            <li><a href="">Buku</a></li>
+            <li><a href="buku.php">Buku</a></li>
             <li><a href="">Pinjam</a></li>
         <ul>
         </td>
         <td width="500">
-            <a href="a.php">Input Anggota</a>
+            <a href="input.php?proses=<?php echo 'insert';?>">Input Anggota</a>
             <table border="1" >
         <thead>  
           <tr>
@@ -42,7 +42,7 @@ while($d = mysqli_fetch_array($data)){
 	    <td><?php echo $d['alamat']; ?></td>
 	    <td><?php echo $d['noHP']; ?></td>
         <td>
-            <a href="ubah.php?id=<?php echo $d["idAnggota"];?>">Ubah</a> | <a href="hapus.php">Hapus</a>
+            <a href="input.php?id=<?php echo $d["idAnggota"];?>&proses=update">Ubah</a> | <a href="hapus.php">Hapus</a>
         </td> 
 	</tr>
 <?php }	?>
