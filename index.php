@@ -20,25 +20,25 @@
             <table border="1" >
         <thead>  
           <tr>
-            <th >No</th>
-            <th >Nama Anggota</th>
-            <th >Jenis Kelamin</th>
-            <th >Alamat</th>
-            <th >Nomor HP</th>
-            <th >Aksi</th>
+            <th>No</th>
+            <th>Nama Anggota</th>
+            <th>Jenis Kelamin</th>
+            <th>Alamat</th>
+            <th>Nomor HP</th>
+            <th>Aksi</th>
           </tr>
         </thead>
 <tbody>
 <?php 
 include 'koneksi.php';
 $no = 1;
-$data = mysqli_query($conn, "SELECT * FROM manggota");
+$data = mysqli_query($conn, "SELECT A.namaAnggota,B.jenisKelamin,A.alamat,A.noHP FROM manggota A INNER JOIN mjkelamin B ON A.idJkelamin = B.idJkelamin");
 while($d = mysqli_fetch_array($data)){
 ?>
 	<tr>
 		<td><?php echo $no++; ?></td>
 		<td><?php echo $d['namaAnggota']; ?></td>
-        <td><?php echo $d['idJkelamin']; ?></td>
+        <td><?php echo $d['jenisKelamin']; ?></td>
 	    <td><?php echo $d['alamat']; ?></td>
 	    <td><?php echo $d['noHP']; ?></td>
         <td>
