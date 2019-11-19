@@ -5,13 +5,13 @@ include "koneksi.php";
 $nama = $_POST["nama"];
 $JKelamin = $_POST["jenis_kelamin"];
 $alamat = $_POST["alamat"];
-$telp = $_POST["noHP"];
+$telp = $_POST["no_telp"];
 $proses = $_POST["proses"];
-$id = $_POST["id"];
+$nik = $_POST["nik"];
 if ($proses == "insert"){
-    $sql = "INSERT INTO manggota(namaAnggota, idJkelamin, alamat, noHP) VALUES('$nama', '$JKelamin', '$alamat', '$telp')";
+    $sql = "INSERT INTO mpetugas(NIK, namaPetugas, idJkelamin, alamat, noHP) VALUES('$nik', '$nama', '$JKelamin', '$alamat', '$telp')";
 } else {
-    $sql = "UPDATE manggota SET namaAnggota = '$nama',noHP = '$telp',alamat ='$alamat',idjkelamin = '$JKelamin' where idanggota = '$id'";
+    $sql = "UPDATE mpetugas SET namaPetugas = '$nama',noHP = '$telp',alamat ='$alamat',idjkelamin = '$JKelamin' where NIK = '$nik'";
 }
 
 // Buat query insert datanya
@@ -20,10 +20,6 @@ if ($proses == "insert"){
 // Jalankan query
 // isset digunakan untuk jika salah satu inputan tidak ter-input data tidak masuk ke database
 $hasil = mysqli_query($conn, $sql);
-if (!$hasil) {
-    printf("Error: %s\n", mysqli_error($conn));
-    exit();
-}
 if ($hasil){
     echo "
         <script>

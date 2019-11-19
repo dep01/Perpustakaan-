@@ -4,9 +4,13 @@ include 'koneksi.php';
 $proses = $_GET['proses'];
 if ($proses =="update"){
     $nik = $_GET['nik'];
-    $qu =  "SELECT * FROM mpetugas WHERE NIK = $nik";
+    $qu =  "SELECT * FROM mpetugas WHERE nik = $nik";
     $data = mysqli_query($conn, $qu);
     $d = mysqli_fetch_array($data);
+    if (!$data) {
+        printf("Error: %s\n", mysqli_error($conn));
+        exit();
+    }
     $nama = $d['namaPetugas'];
     $kelamin = $d['idJkelamin'];
     $alamat = $d['alamat'];
@@ -38,7 +42,7 @@ if ($proses =="update"){
                 <ul>
             </td>
             <td width="500">
-            <form method="POST" action="proses_anggota.php?">
+            <form method="POST" action="proses_petugas.php?">
             <table border="0">
             </td>
         <tr>
