@@ -36,8 +36,9 @@ if ($proses =="update"){
             <td width = "200">
                 <ul>
                     <li><a href="">Anggota</a></li>
-                    <li><a href="">Buku</a></li>
+                    <li><a href="buku.php">Buku</a></li>
                     <li><a href="">Pinjam</a></li>
+                    <li><a href="petugas.php">Petugas</a></li>
                 <ul>
             </td>
             <td width="500">

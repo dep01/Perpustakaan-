@@ -1,5 +1,6 @@
 <?php
 include 'koneksi.php';
+
 $proses = $_GET['proses'];
 if ($proses =="update"){
     $id = $_GET['id'];
@@ -30,13 +31,14 @@ if ($proses =="update"){
         <tr>
             <td width = "200">
                 <ul>
-                    <li><a href="anggota.php">Anggota</a></li>
+                    <li><a href="">Anggota</a></li>
                     <li><a href="buku.php">Buku</a></li>
-                    <li><a href="pinjam.php">Pinjam</a></li>
+                    <li><a href="">Pinjam</a></li>
+                    <li><a href="petugas.php">Petugas</a></li>
                 <ul>
             </td>
             <td width="500">
-            <form method="post" action="proses.php?">
+            <form method="post" action="proses_anggota.php?">
             <table border="0">
             </td>
         <tr>

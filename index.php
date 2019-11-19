@@ -3,20 +3,21 @@
 </head>
 <body>
 <form action="" method="POST">
-<table width="1000" border="2">
+<table width="1400" border="2">
     <tr>
         <td colspan="2" align="center"><h1>Sistem Informasi Perpustakaan</h1></td>
     </tr>
     <tr>
-        <td width = "200">
+        <td width = "100">
         <ul>
             <li><a href="">Anggota</a></li>
             <li><a href="buku.php">Buku</a></li>
             <li><a href="">Pinjam</a></li>
+            <li><a href="petugas.php">Petugas</a></li>
         <ul>
         </td>
         <td width="500">
-            <a href="input.php?proses=<?php echo 'insert';?>">Input Anggota</a>
+            <a href="input_anggota.php?proses=<?php echo 'insert';?>">Input Anggota</a>
             <table border="1" >
         <thead>  
           <tr>
@@ -32,7 +33,7 @@
 <?php 
 include 'koneksi.php';
 $no = 1;
-$data = mysqli_query($conn, "SELECT A.namaAnggota,B.jenisKelamin,A.alamat,A.noHP FROM manggota A INNER JOIN mjkelamin B ON A.idJkelamin = B.idJkelamin");
+$data = mysqli_query($conn, "SELECT * FROM manggota A INNER JOIN mjkelamin B ON A.idJkelamin = B.idJkelamin");
 while($d = mysqli_fetch_array($data)){
 ?>
 	<tr>
@@ -42,7 +43,7 @@ while($d = mysqli_fetch_array($data)){
 	    <td><?php echo $d['alamat']; ?></td>
 	    <td><?php echo $d['noHP']; ?></td>
         <td>
-            <a href="input.php?id=<?php echo $d["idAnggota"];?>&proses=update">Ubah</a> | <a href="hapus.php">Hapus</a>
+            <a href="input_anggota.php?id=<?php echo $d["idAnggota"];?>&proses=update">Ubah</a> | <a href="hapus.php">Hapus</a>
         </td> 
 	</tr>
 <?php }	?>
