@@ -10,10 +10,13 @@
     <tr>
         <td width = "100">
         <ul>
-            <li><a href="">Anggota</a></li>
-            <li><a href="buku.php">Buku</a></li>
-            <li><a href="">Pinjam</a></li>
-            <li><a href="petugas.php">Petugas</a></li>
+            <a href="">Anggota</a>
+            <br>
+            <a href="buku.php">Buku</a>
+            <br>
+            <a href="">Pinjam</a>
+            <br>
+            <a href="petugas.php">Petugas</a>
         <ul>
         </td>
         <td width="500">

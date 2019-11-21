@@ -17,7 +17,7 @@
         <ul>
         </td>
         <td width="500">
-            <a href="input_buku.php?proses=<?php echo 'insert';?>">Input Buku</a>
+            <a href="input_buku.php?proses=<?php echo 'insert'; ?>">Input Buku</a> | <a href="input_penerbit.php?proses=<?php echo 'insert'; ?>">Input Penerbit</a> | <a href="input_Jbuku.php?proses=<?php echo 'insert'; ?>">Input Jenis Buku</a>
             <table border="1" >
         <thead>  
           <tr>
