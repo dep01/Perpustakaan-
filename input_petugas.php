@@ -1,6 +1,7 @@
 <?php
 include 'koneksi.php';
-
+$sql = "select * from mjkelamin";
+$item = mysqli_query($conn, $sql);
 $proses = $_GET['proses'];
 if ($proses =="update"){
     $nik = $_GET['nik'];
@@ -48,7 +49,7 @@ if ($proses =="update"){
         <tr>
             <td>NIK</td>
             <td>:</td>
-            <td><input type="text" name="nik" value="<?php echo $nik ?>"></td>
+            <td><input type="text" name="nik" value="<?php echo $nik ?>" maxlength="12"></td>
         </tr>
         <tr>
             <td>Nama Petugas</td>
@@ -60,8 +61,9 @@ if ($proses =="update"){
             <td>:</td>
             <td>
                 <select name="jenis_kelamin" id="">
-                <option value="1">Laki-Laki</option>
-                <option value="2">Perempuan</option>
+                <?php while ($row1 =  mysqli_fetch_array($item)):;?>
+                <option value=<?php echo $row1[0]; ?>><?php echo $row1[1]; ?></option>
+                <?php endwhile; ?>
                 </select>
             </td>
         </tr>
@@ -75,7 +77,6 @@ if ($proses =="update"){
             <td>:</td>
             <td><input type="text" name="no_telp" value="<?php echo $nohp ?>"></td>
             <td><input type="hidden" name="proses" value="<?php echo $proses ?>"></td>
-            <td><input type="hidden" name="nik" value="<?php echo $nik ?>"></td>
         </tr>
         <tr>
             <td><input type="submit" name="simpan" value="Simpan"></td>

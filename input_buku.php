@@ -1,6 +1,9 @@
 <?php
 include 'koneksi.php';
-
+$sql = "select * from mjenisbuku where status = 1";
+$item = mysqli_query($conn, $sql);
+$sql1 = "select * from mpenerbit where status = 1";
+$item1 = mysqli_query($conn, $sql1);
 $proses = $_GET['proses'];
 if ($proses =="update"){
     $id = $_GET['id'];
@@ -50,10 +53,9 @@ if ($proses =="update"){
             <td>:</td>
             <td>
                 <select name="penerbit" id="">
-                <option value="1">Erlangga</option>
-                <option value="2">Elex Media Komputindo</option>
-                <option value="3">Grasindo</option>
-                <option value="4">Bhuana Ilmu Poluler</option>
+                <?php while ($row1 =  mysqli_fetch_array($item1)):;?>
+                <option value=<?php echo $row1[0]; ?>><?php echo $row1[1]; ?></option>
+                <?php endwhile; ?>
                 </select>
             </td>
         </tr>
@@ -62,10 +64,9 @@ if ($proses =="update"){
             <td>:</td>
             <td>
                 <select name="jenis_buku" id="">
-                <option value="1">Pengetahuan</option>
-                <option value="2">Novel</option>
-                <option value="3">Komik</option>
-                <option value="4">Teknologi</option>
+                <?php while ($row2 =  mysqli_fetch_array($item)):;?>
+                <option value=<?php echo $row2[0]; ?>><?php echo $row2[1]; ?></option>
+                <?php endwhile; ?>
                 </select>
             </td>
         </tr>

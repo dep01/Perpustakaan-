@@ -9,7 +9,7 @@ $telp = $_POST["no_telp"];
 $proses = $_POST["proses"];
 $nik = $_POST["nik"];
 if ($proses == "insert"){
-    $sql = "INSERT INTO mpetugas(NIK, namaPetugas, idJkelamin, alamat, noHP) VALUES('$nik', '$nama', '$JKelamin', '$alamat', '$telp')";
+    $sql = "INSERT INTO mpetugas(NIK, namaPetugas, idJkelamin, alamat, noHP,status) VALUES('$nik', '$nama', '$JKelamin', '$alamat', '$telp',1)";
 } else {
     $sql = "UPDATE mpetugas SET namaPetugas = '$nama',noHP = '$telp',alamat ='$alamat',idjkelamin = '$JKelamin' where NIK = '$nik'";
 }
@@ -27,6 +27,7 @@ if ($hasil){
         document.location.href = 'index.php';
         </script>
         ";
+        
     } else {
         echo "
         <script>
@@ -34,5 +35,6 @@ if ($hasil){
         document.location.href = 'index.php';
         </script>
         ";
+    
     }
 ?>

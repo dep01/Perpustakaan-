@@ -9,7 +9,7 @@ $telp = $_POST["noHP"];
 $proses = $_POST["proses"];
 $id = $_POST["id"];
 if ($proses == "insert"){
-    $sql = "INSERT INTO manggota(namaAnggota, idJkelamin, alamat, noHP) VALUES('$nama', '$JKelamin', '$alamat', '$telp')";
+    $sql = "INSERT INTO manggota(namaAnggota, idJkelamin, alamat, noHP,status) VALUES('$nama', '$JKelamin', '$alamat', '$telp',1)";
 } else {
     $sql = "UPDATE manggota SET namaAnggota = '$nama',noHP = '$telp',alamat ='$alamat',idjkelamin = '$JKelamin' where idanggota = '$id'";
 }

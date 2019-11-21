@@ -34,7 +34,7 @@
 <?php 
 include 'koneksi.php';
 $no = 1;
-$data = mysqli_query($conn, "SELECT * FROM mpetugas A INNER JOIN mjkelamin B ON A.idJkelamin = B.idJkelamin");
+$data = mysqli_query($conn, "SELECT * FROM mpetugas A INNER JOIN mjkelamin B ON A.idJkelamin = B.idJkelamin where A.status = 1");
 while($d = mysqli_fetch_array($data)){
 ?>
 	<tr>

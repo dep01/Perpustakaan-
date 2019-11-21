@@ -11,7 +11,7 @@ $tanggal = $_POST["tgl_terbit"];
 $id = $_POST["id"];
 $proses = $_POST["proses"];
 if ($proses == "insert"){
-    $sql = "INSERT INTO mbuku(idPenerbit, idJenisBuku, judulBuku, jangkaWaktu, dendaPerhari, tglTerbit) VALUES('$penerbit', '$jenis', '$judul', '$jangka', '$denda', '$tanggal')";
+    $sql = "INSERT INTO mbuku(idPenerbit, idJenisBuku, judulBuku, jangkaWaktu, dendaPerhari, tglTerbit,status) VALUES('$penerbit', '$jenis', '$judul', '$jangka', '$denda', '$tanggal',1)";
 } else {
     $sql = "UPDATE mbuku SET idPenerbit = '$penerbit',idJenisBuku = '$jenis',judulBuku = '$judul',jangkaWaktu = '$jangka',dendaPerhari = '$denda',tglTerbit = '$tanggal' where idBuku = '$id'";
 }
