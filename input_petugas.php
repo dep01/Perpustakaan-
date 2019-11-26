@@ -43,7 +43,7 @@ if ($proses =="update"){
                 <ul>
             </td>
             <td width="500">
-            <form method="POST" action="proses_petugas.php?">
+            <form method="POST" action="proses_petugas.php?proses=<?php echo $proses ?>">
             <table border="0">
             </td>
         <tr>
@@ -76,7 +76,6 @@ if ($proses =="update"){
             <td>Nomor Telepon</td>
             <td>:</td>
             <td><input type="text" name="no_telp" value="<?php echo $nohp ?>"></td>
-            <td><input type="hidden" name="proses" value="<?php echo $proses ?>"></td>
         </tr>
         <tr>
             <td><input type="submit" name="simpan" value="Simpan"></td>

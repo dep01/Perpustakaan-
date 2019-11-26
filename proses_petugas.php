@@ -1,17 +1,27 @@
 <?php
 // File proses form
 include "koneksi.php";
+$proses = $_GET["proses"];
+if ($proses=="delete"){
+    $nik = $_GET["nik"];
+} else {
+    $nama = $_POST["nama"];
+    $JKelamin = $_POST["jenis_kelamin"];
+    $alamat = $_POST["alamat"];
+    $telp = $_POST["no_telp"];
+    $nik = $_POST["nik"];
+}
+$pesan = "";
 
-$nama = $_POST["nama"];
-$JKelamin = $_POST["jenis_kelamin"];
-$alamat = $_POST["alamat"];
-$telp = $_POST["no_telp"];
-$proses = $_POST["proses"];
-$nik = $_POST["nik"];
 if ($proses == "insert"){
     $sql = "INSERT INTO mpetugas(NIK, namaPetugas, idJkelamin, alamat, noHP,status) VALUES('$nik', '$nama', '$JKelamin', '$alamat', '$telp',1)";
-} else {
+    $pesan = "Data berhasil di tambahkan :)";
+} elseif ($proses=="update") {
     $sql = "UPDATE mpetugas SET namaPetugas = '$nama',noHP = '$telp',alamat ='$alamat',idjkelamin = '$JKelamin' where NIK = '$nik'";
+    $pesan = "Data berhasil di-Update :)";
+} else {
+    $sql ="update mpetugas set status = 9 where NIK = '$nik'";
+    $pesan = "Data berhasil di hapus :)";
 }
 
 // Buat query insert datanya
@@ -23,7 +33,7 @@ $hasil = mysqli_query($conn, $sql);
 if ($hasil){
     echo "
         <script>
-        alert('Data berhasil di tambahkan!');
+        alert('$pesan');
         document.location.href = 'index.php';
         </script>
         ";

@@ -2,18 +2,28 @@
 // File proses form
 include "koneksi.php";
 
-$penerbit = $_POST["penerbit"];
-$jenis = $_POST["jenis_buku"];
-$judul = $_POST["judul_buku"];
-$jangka = $_POST["jangka_waktu"];
-$denda = $_POST["denda"];
-$tanggal = $_POST["tgl_terbit"];
-$id = $_POST["id"];
-$proses = $_POST["proses"];
+$proses = $_GET["proses"];
+if ($proses=="delete"){
+    $id = $_GET["id"];
+} else {
+    $penerbit = $_POST["penerbit"];
+    $jenis = $_POST["jenis_buku"];
+    $judul = $_POST["judul_buku"];
+    $jangka = $_POST["jangka_waktu"];
+    $denda = $_POST["denda"];
+    $tanggal = $_POST["tgl_terbit"];
+    $id = $_POST["id"];
+}
+$pesan = "";
 if ($proses == "insert"){
     $sql = "INSERT INTO mbuku(idPenerbit, idJenisBuku, judulBuku, jangkaWaktu, dendaPerhari, tglTerbit,status) VALUES('$penerbit', '$jenis', '$judul', '$jangka', '$denda', '$tanggal',1)";
+    $pesan = "Data berhasil ditambahkan!";
+} elseif ($proses =="delete"){
+    $sql = "update mbuku set status = 9 where idBuku = '$id'";
+    $pesan = "Data berhasil dihapus :)";
 } else {
     $sql = "UPDATE mbuku SET idPenerbit = '$penerbit',idJenisBuku = '$jenis',judulBuku = '$judul',jangkaWaktu = '$jangka',dendaPerhari = '$denda',tglTerbit = '$tanggal' where idBuku = '$id'";
+    $pesan ="Data berhasil di-Update :)";
 }
 
 // Buat query insert datanya
@@ -29,7 +39,7 @@ if (!$hasil) {
 if ($hasil){
     echo "
         <script>
-        alert('Data berhasil di tambahkan!');
+        alert('$pesan');
         document.location.href = 'index.php';
         </script>
         ";

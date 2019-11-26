@@ -45,7 +45,7 @@ if ($proses =="update"){
                 <ul>
             </td>
             <td width="500">
-            <form method="POST" action="proses_buku.php?">
+            <form method="POST" action="proses_buku.php?proses=<?php echo $proses ?>">
             <table border="0">
             </td>
         <tr>
@@ -89,7 +89,6 @@ if ($proses =="update"){
             <td>Tanggal Terbit</td>
             <td>:</td>
             <td><input type="date" name="tgl_terbit" value="<?php echo $tanggal ?>"></td>
-            <td><input type="hidden" name="proses" value="<?php echo $proses ?>"></td>
             <td><input type="hidden" name="id" value="<?php echo $id ?>"></td>
         </tr>
         <tr>
