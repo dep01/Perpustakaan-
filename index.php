@@ -46,7 +46,7 @@ while($d = mysqli_fetch_array($data)){
 	    <td><?php echo $d['alamat']; ?></td>
 	    <td><?php echo $d['noHP']; ?></td>
         <td>
-            <a href="input_anggota.php?id=<?php echo $d["idAnggota"];?>&proses=update">Ubah</a> | <a href="hapus.php">Hapus</a>
+            <a href="input_anggota.php?id=<?php echo $d["idAnggota"];?>&proses=update">Ubah</a> | <a href="proses_anggota.php?id=<?php echo $d["idAnggota"];?>&proses=delete">Hapus</a>
         </td> 
 	</tr>
 <?php }	?>

@@ -39,7 +39,7 @@ if ($proses =="update"){
                 <ul>
             </td>
             <td width="500">
-            <form method="post" action="proses_anggota.php?">
+            <form method="post" action="proses_anggota.php?proses = <?php echo $proses ?>">
             <table border="0">
             </td>
         <tr>
@@ -67,7 +67,6 @@ if ($proses =="update"){
             <td>No. HP</td>
             <td>:</td>
             <td><input type="text" name="noHP" value=<?php echo $hp ?>></td>
-            <td><input type="hidden" name="proses" value=<?php echo $proses ?>></td>
             <td><input type="hidden" name="id" value=<?php echo $id ?>></td>
         </tr>
         <tr>
