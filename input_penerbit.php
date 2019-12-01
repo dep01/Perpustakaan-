@@ -22,20 +22,23 @@ if ($proses =="update"){
 <head>
 </head>
 <body>
-    <table width="700" border="1">
+    <table width="1200" border="2" align="center">
         <tr>
-            <td colspan="2" align="center"><h1>Selamat Datang Di Sistem Perpustakaan</h1></td>
+            <td colspan="2" align="center"><h1>Sistem Informasi Perpustakaan</h1></td>
         </tr>
         <tr>
-            <td width = "200">
+            <td width = "200" align="center">
                 <ul>
-                    <li><a href="">Anggota</a></li>
-                    <li><a href="buku.php">Buku</a></li>
-                    <li><a href="">Pinjam</a></li>
-                    <li><a href="petugas.php">Petugas</a></li>
+                    <a href="anggota.php">Anggota</a> ||
+                    <a href="buku.php">Buku</a> ||
+                    <a href="petugas.php">Petugas</a> ||
+                    <a href="pinjam.php">Peminjaman Buku</a> ||
+                    <a href="pengembalian.php">Pengembalian Buku</a>
                 <ul>
             </td>
-            <td width="500">
+        </tr>
+        <tr>
+            <td width="500" align="center">
             <form method="POST" action="proses_penerbit.php">
             <table border="0">
             </td>
@@ -50,6 +53,7 @@ if ($proses =="update"){
         </tr>
         <tr>
             <td><input type="submit" name="simpan" value="Simpan"></td>
+        </tr>
         </tr>
     </table>
 </form>

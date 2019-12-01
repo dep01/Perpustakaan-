@@ -20,13 +20,12 @@
     </tr>
     <tr>
         <td width="500" align="center">
-            <a href="input_petugas.php?proses=<?php echo 'insert';?>">Input Petugas</a>
+            <a href="input_anggota.php?proses=<?php echo 'insert';?>">Input Anggota</a>
             <table border="1" >
         <thead>  
           <tr>
             <th>No</th>
-            <th>NIK</th>
-            <th>Nama Petugas</th>
+            <th>Nama Anggota</th>
             <th>Jenis Kelamin</th>
             <th>Alamat</th>
             <th>Nomor HP</th>
@@ -38,18 +37,17 @@
 <?php 
 include 'koneksi.php';
 $no = 1;
-$data = mysqli_query($conn, "SELECT * FROM mpetugas A INNER JOIN mjkelamin B ON A.idJkelamin = B.idJkelamin where A.status = 1");
+$data = mysqli_query($conn, "SELECT * FROM manggota A INNER JOIN mjkelamin B ON A.idJkelamin = B.idJkelamin where A.status = 1");
 while($d = mysqli_fetch_array($data)){
 ?>
 	<tr>
 		<td><?php echo $no++; ?></td>
-		<td><?php echo $d['NIK']; ?></td>
-        <td><?php echo $d['namaPetugas']; ?></td>
-	    <td><?php echo $d['jenisKelamin']; ?></td>
-        <td><?php echo $d['alamat'] ?></td>
+		<td><?php echo $d['namaAnggota']; ?></td>
+        <td><?php echo $d['jenisKelamin']; ?></td>
+	    <td><?php echo $d['alamat']; ?></td>
 	    <td><?php echo $d['noHP']; ?></td>
         <td>
-            <a href="input_petugas.php?nik=<?php echo $d["NIK"];?>&proses=update">Ubah</a> | <a href="proses_petugas.php?nik=<?php echo $d["NIK"];?>&proses=delete">Hapus</a>
+            <a href="input_anggota.php?id=<?php echo $d["idAnggota"];?>&proses=update">Ubah</a> | <a href="proses_anggota.php?id=<?php echo $d["idAnggota"];?>&proses=delete">Hapus</a>
         </td> 
 	</tr>
 <?php }	?>

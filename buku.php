@@ -3,21 +3,24 @@
 </head>
 <body>
 <form action="" method="POST">
-<table width="1400" border="2">
+<table width="1200" border="2" align="center">
     <tr>
         <td colspan="2" align="center"><h1>Sistem Informasi Perpustakaan</h1></td>
     </tr>
     <tr>
-        <td width = "100">
+        <td width = "100" align="center">
         <ul>
-            <li><a href="">Anggota</a></li>
-            <li><a href="">Buku</a></li>
-            <li><a href="">Pinjam</a></li>
-            <li><a href="petugas.php">Petugas</a></li>
+            <a href="anggota.php">Anggota</a> ||
+            <a href="buku.php">Buku</a> ||
+            <a href="petugas.php">Petugas</a> ||
+            <a href="pinjam.php">Peminjaman Buku</a> ||
+            <a href="pengembalian.php">Pengembalian Buku</a> 
         <ul>
         </td>
-        <td width="500">
-            <a href="input_buku.php?proses=<?php echo 'insert'; ?>">Input Buku</a> | <a href="input_penerbit.php?proses=<?php echo 'insert'; ?>">Input Penerbit</a> | <a href="input_Jbuku.php?proses=<?php echo 'insert'; ?>">Input Jenis Buku</a>
+    </tr>
+    <tr>
+        <td width="500" align="center">
+            <a href="input_buku.php?proses=<?php echo 'insert'; ?>">Input Buku</a> || <a href="input_penerbit.php?proses=<?php echo 'insert'; ?>">Input Penerbit</a> || <a href="input_Jbuku.php?proses=<?php echo 'insert'; ?>">Input Jenis Buku</a>
             <table border="1" >
         <thead>  
           <tr>
@@ -31,6 +34,7 @@
             <th>Aksi</th>
           </tr>
         </thead>
+    </tr>
 <tbody>
 <?php 
 include 'koneksi.php';
