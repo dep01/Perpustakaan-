@@ -1,23 +1,25 @@
 <?php
 include 'koneksi.php';
-$sql = "SELECT * FROM mjkelamin";
+$sql = "SELECT * FROM manggota WHERE status = 1";
 $item = mysqli_query($conn, $sql);
+$sql1 = "SELECT * FROM mbuku WHERE status = 1";
+$item1 = mysqli_query($conn, $sql1);
 $proses = $_GET['proses'];
 if ($proses =="update"){
-    $id = $_GET['id'];
-    $qu =  "SELECT * FROM manggota WHERE idAnggota = $id";
+    $id = $_GET['nomorPeminjaman'];
+    $qu =  "SELECT * FROM tblpeminjaman WHERE nomorPeminjaman = $id";
     $data = mysqli_query($conn, $qu);
     $d = mysqli_fetch_array($data);
-    $nama = $d['namaAnggota'];
-    $hp = $d['noHP'];
-    $alamat = $d['alamat'];
-    $jk = $d['idJkelamin'];
+    $anggota = $d['idAnggota'];
+    $buku = $d['idBuku'];
+    $tanggal = $d['tglPinjam'];
+    $NIK = $d['NIK'];
 } else {
     $id ="";
-    $nama = "";
-    $hp = "";
-    $alamat = "";
-    $jk = "";     
+    $anggota = "";
+    $buku = "";
+    $tanggal = "";
+    $NIK = "";     
 }
 ?>
 
@@ -42,35 +44,34 @@ if ($proses =="update"){
         </tr>
         <tr>
             <td width="500" align="center">
-            <form method="post" action="proses_anggota.php?proses = <?php echo $proses ?>">
+            <form method="POST" action="proses_peminjaman.php?proses=<?php echo $proses ?>">
             <table border="0">
             </td>
         <tr>
+            <td>Nomor Peminjaman</td>
+            <td>:</td>
+            <td><input type="text" name="no_pinjam" value="<?php echo $id ?>"></td>
+        </tr>
+        <tr>
             <td>Nama Anggota</td>
             <td>:</td>
-            <td><input type="text" name="nama" value=<?php echo $nama ?>></td>
+            <td><input type="text" name="anggota" value="<?php echo $anggota ?>"></td>
         </tr>
         <tr>
-            <td>Jenis Kelamin</td>
+            <td>Nama Buku</td>
             <td>:</td>
-            <td>
-                <select name="jenis_kelamin" id="">
-                <?php while ($row1 =  mysqli_fetch_array($item)):;?>
-                <option value=<?php echo $row1[0]; ?>><?php echo $row1[1]; ?></option>
-                <?php endwhile; ?>
-                </select>
-            </td>
+            <td><input type="text" name="buku" value="<?php echo $buku ?>"></td>
         </tr>
         <tr>
-            <td>Alamat</td>
+            <td>Tanggal Peminjaman</td>
             <td>:</td>
-            <td><input type="text" name="alamat" value=<?php echo $alamat ?>></td>
+            <td><input type="date" name="tanggal" value="<?php echo $tanggal ?>"></td>
+            <td><input type="hidden" name="id" value="<?php echo $id ?>"></td>
         </tr>
         <tr>
-            <td>No. HP</td>
+            <td>NIK</td>
             <td>:</td>
-            <td><input type="text" name="noHP" value=<?php echo $hp ?>></td>
-            <td><input type="hidden" name="id" value=<?php echo $id ?>></td>
+            <td><input type="text" name="buku" value="<?php echo $NIK ?>"></td>
         </tr>
         <tr>
             <td><input type="submit" name="simpan" value="Simpan"></td>

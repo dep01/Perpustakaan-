@@ -1,8 +1,8 @@
 <?php
 include 'koneksi.php';
-$sql = "select * from mjenisbuku where status = 1";
+$sql = "SELECT * FROM mjenisbuku WHERE status = 1";
 $item = mysqli_query($conn, $sql);
-$sql1 = "select * from mpenerbit where status = 1";
+$sql1 = "SELECT * FROM mpenerbit WHERE status = 1";
 $item1 = mysqli_query($conn, $sql1);
 $proses = $_GET['proses'];
 if ($proses =="update"){

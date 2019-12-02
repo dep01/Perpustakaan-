@@ -20,7 +20,7 @@
     </tr>
     <tr>
         <td width="500" align="center">
-            <a href="input_petugas.php?proses=<?php echo 'insert';?>">Input Peminjaman</a>
+            <a href="input_peminjaman.php?proses=<?php echo 'insert';?>">Input Peminjaman</a>
             <table border="1" >
         <thead>  
           <tr>

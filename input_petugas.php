@@ -1,6 +1,6 @@
 <?php
 include 'koneksi.php';
-$sql = "select * from mjkelamin";
+$sql = "SELECT * FROM mjkelamin";
 $item = mysqli_query($conn, $sql);
 $proses = $_GET['proses'];
 if ($proses =="update"){
