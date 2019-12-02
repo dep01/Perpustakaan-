@@ -7,3 +7,5 @@
 -proses hapus petugas dan buku clear
 01/12/2019
 -merapihkan tampilan
+02/12/2019
+-Membuat form peminjaman dan pengembalian
