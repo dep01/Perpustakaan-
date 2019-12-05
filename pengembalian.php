@@ -32,7 +32,6 @@
             <th>Denda</th>
             <th>Total Denda</th>
             <th>NIK</th>
-            <th>Aksi</th>
           </tr>
         </thead>
     </tr>
@@ -52,9 +51,6 @@ while($d = mysqli_fetch_array($data)){
         <td><?php echo $d["denda"] ?></td>
         <td><?php echo $d["totalDenda"] ?></td>
 	    <td><?php echo $d['NIK']; ?></td>
-        <td>
-            <a href="input_petugas.php?nik=<?php echo $d["NIK"];?>&proses=update">Ubah</a> | <a href="proses_petugas.php?nik=<?php echo $d["NIK"];?>&proses=delete">Hapus</a>
-        </td> 
 	</tr>
 <?php }	?>
 </tbody>

@@ -10,10 +10,10 @@
     <tr>
         <td width = "100" align="center">
         <ul>
-            <a href="anggota.php">Anggota</a> |
-            <a href="buku.php">Buku</a> |
-            <a href="petugas.php">Petugas</a> |
-            <a href="pinjam.php">Peminjaman Buku</a> |
+            <a href="anggota.php">Anggota</a> ||
+            <a href="buku.php">Buku</a> ||
+            <a href="petugas.php">Petugas</a> ||
+            <a href="pinjam.php">Peminjaman Buku</a> ||
             <a href="pengembalian.php">Pengembalian Buku</a>
         <ul>
     </tr>
