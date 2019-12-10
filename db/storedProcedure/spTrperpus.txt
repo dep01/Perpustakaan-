@@ -1,0 +1,44 @@
+DELIMITER $$
+ 
+CREATE PROCEDURE spTrperpus(
+    IN Pproses varchar(10), 
+    IN PNIK  VARCHAR(20),
+    IN PnomorPinjam varchar(20),
+    IN PidBuku int,
+    IN PidAnggota int)
+BEGIN
+    DECLARE Pdenda int;
+    DECLARE Pjangka int;
+    DECLARE PlamaPinjam int;
+    DECLARE Ptelat INT ;
+    DECLARE PtotalDenda int;
+    DECLARE Pbukuid int;
+    
+    SET Pjangka = (SELECT jangkaWaktu from mbuku where idBuku = PidBuku);
+    SET Pdenda = (SELECT dendaPerhari FROM mbuku WHERE idBuku = PidBuku);
+    
+    IF Pproses ='pinjam' THEN
+        INSERT INTO tblpeminjaman(idAnggota,idBuku,NIK,nomorPinjaman,tglPinjam) VALUES (PidAnggota,PidBuku,PNIK,PnomorPinjam,curdate());
+        UPDATE tbljumlahbuku SET jumlahBukuTerpinjam = jumlahBukuTerpinjam + 1,jumlahBukuTersedia = jumlahBukuTersedia - 1 WHERE idBuku = PidBuku;
+        
+    ELSEIF Pproses = 'kembali' THEN
+        SET PlamaPinjam = (SELECT DATEDIFF(curdate(), tglPinjam) from tblpeminjaman WHERE nomorPinjaman = PnomorPinjam);
+        set Pbukuid = (select idBuku from tblpeminjaman WHERE nomorPinjaman = PnomorPinjam);
+         SET Pjangka = (SELECT jangkaWaktu from mbuku where idBuku = Pbukuid);
+    SET Pdenda = (SELECT dendaPerhari FROM mbuku WHERE idBuku = Pbukuid);
+         SET Ptelat = (SELECT PlamaPinjam - Pjangka);
+        IF Ptelat <= 0 THEN
+       		 SET Ptelat = '0';
+       		 SET PtotalDenda = '0';
+             SET Pdenda = '0';
+        ELSE
+        	 SET PtotalDenda = Ptelat * Pdenda;
+        END IF;
+        INSERT INTO tblpengembalian(denda,lamaPinjam,NIK,nomorPinjaman,telat,tglPengembalian,totalDenda) VALUES (Pdenda,PlamaPinjam,PNIK,PnomorPinjam,Ptelat,curdate(),PtotalDenda);
+        UPDATE tbljumlahbuku set jumlahBukuTersedia = jumlahBukuTersedia + 1, jumlahBukuTerpinjam = jumlahBukuTerpinjam -1 where idBuku = Pbukuid;
+    ELSE
+    	SELECT * from tbljumlahbuku;
+    END IF;
+END$$
+ 
+DELIMITER ;

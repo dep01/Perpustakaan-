@@ -9,3 +9,7 @@
 -merapihkan tampilan
 02/12/2019
 -Membuat form peminjaman dan pengembalian
+10/12/2019
+-penambahan procedure spTrperpus di mySql
+call spTrperpus('pinjam','NIK','Nomor pinjam',idBuku,idAnggota) untuk peminjaman
+call spTrperpus('kembali','NIK','Nomor pinjam',0,0) untuk pengembalian
