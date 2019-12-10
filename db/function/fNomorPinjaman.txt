@@ -1,0 +1,26 @@
+
+DELIMITER $$
+ 
+CREATE FUNCTION fNomorPinjaman(
+) 
+RETURNS VARCHAR(20)
+DETERMINISTIC
+BEGIN
+    DECLARE PnomorPinjam VARCHAR(20);
+ 	DECLARE Purutan varchar(8);
+    DECLARE maxNopinjam varchar(20);
+    DECLARE PtglMax varchar(8);
+    SET Purutan = (SELECT DATE_FORMAT(curdate(), "%Y%m%d"));
+    SET PtglMax = (SELECT LEFT(MAX(nomorPinjaman),8) from tblpeminjaman);
+    SET maxNopinjam = (SELECT MAX(nomorPinjaman) from tblpeminjaman);
+    
+    if Purutan > PtglMax THEN
+   		SET PnomorPinjam = CONCAT(Purutan,'0001');
+    ELSE
+    	SET PnomorPinjam = maxNopinjam + 1;
+    END IF;
+    
+    
+    RETURN (PnomorPinjam);
+END$$
+DELIMITER ;
