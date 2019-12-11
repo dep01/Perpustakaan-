@@ -1,5 +1,9 @@
 <?php
 include 'koneksi.php';
+session_start();
+if (!isset($_SESSION['username'])){
+header ("location:login.php");
+}
 $sql = "SELECT * FROM mjenisbuku WHERE status = 1";
 $item = mysqli_query($conn, $sql);
 $sql1 = "SELECT * FROM mpenerbit WHERE status = 1";

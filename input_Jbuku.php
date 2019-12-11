@@ -1,6 +1,9 @@
 <?php
 include 'koneksi.php';
-
+session_start();
+if (!isset($_SESSION['username'])){
+header ("location:login.php");
+}
 $sql = "SELECT * FROM mjenisbuku";
 $item = mysqli_query($conn, $sql);
 $proses = $_GET['proses'];

@@ -1,5 +1,9 @@
 <?php
 include 'koneksi.php';
+session_start();
+if (!isset($_SESSION['username'])){
+    header ("location:login.php");
+    }
 $sql = "SELECT * FROM manggota WHERE status = 1";
 $item = mysqli_query($conn, $sql);
 $sql1 = "SELECT * FROM mbuku WHERE status = 1";
@@ -47,11 +51,6 @@ if ($proses =="update"){
             <form method="POST" action="proses_peminjaman.php?proses=<?php echo $proses ?>">
             <table border="0">
             </td>
-        <tr>
-            <td>Nomor Peminjaman</td>
-            <td>:</td>
-            <td><input type="text" name="no_pinjam" value="<?php echo $id ?>"></td>
-        </tr>
         <tr>
             <td>Nama Anggota</td>
             <td>:</td>

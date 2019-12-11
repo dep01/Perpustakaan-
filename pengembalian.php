@@ -38,6 +38,10 @@
 <tbody>
 <?php 
 include 'koneksi.php';
+session_start();
+if (!isset($_SESSION['username'])){
+header ("location:login.php");
+}
 $no = 1;
 $data = mysqli_query($conn, "SELECT * FROM tblpengembalian");
 while($d = mysqli_fetch_array($data)){

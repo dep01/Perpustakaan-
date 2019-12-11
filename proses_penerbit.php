@@ -1,7 +1,10 @@
 <?php
 // File proses form
 include "koneksi.php";
-
+session_start();
+if (!isset($_SESSION['username'])){
+header ("location:login.php");
+}
 $penerbit = $_POST["penerbit"];
 $id = $_POST["id"];
 $proses = $_POST["proses"];

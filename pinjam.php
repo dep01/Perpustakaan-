@@ -36,6 +36,10 @@
 <tbody>
 <?php 
 include 'koneksi.php';
+session_start();
+if (!isset($_SESSION['username'])){
+header ("location:login.php");
+}
 $no = 1;
 $data = mysqli_query($conn, "SELECT * FROM tblpeminjaman A INNER JOIN manggota B ON A.idAnggota = B.idAnggota INNER JOIN mbuku C ON A.idBuku = C.idBuku");
 while($d = mysqli_fetch_array($data)){

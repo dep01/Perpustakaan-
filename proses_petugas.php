@@ -1,6 +1,10 @@
 <?php
 // File proses form
 include "koneksi.php";
+session_start();
+if (!isset($_SESSION['username'])){
+header ("location:login.php");
+}
 $proses = $_GET["proses"];
 if ($proses=="delete"){
     $nik = $_GET["nik"];

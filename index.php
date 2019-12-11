@@ -37,7 +37,10 @@
 <?php 
 
 include 'koneksi.php';
-
+session_start();
+if (!isset($_SESSION['username'])){
+    header ("location:login.php");
+    }
 $no = 1;
 $data = mysqli_query($conn, "SELECT * FROM manggota A INNER JOIN mjkelamin B ON A.idJkelamin = B.idJkelamin where A.status = 1");
 while($d = mysqli_fetch_array($data)){

@@ -39,6 +39,10 @@
 <?php
 
 include 'koneksi.php';
+session_start();
+if (!isset($_SESSION['username'])){
+header ("location:login.php");
+}
 $no = 1;
 $data = mysqli_query($conn, "SELECT * FROM mbuku A INNER JOIN mpenerbit B ON A.idPenerbit = B.idPenerbit INNER JOIN mjenisbuku C ON A.idJenisBuku = C.idJenisBuku where A.status = 1");
 while($d = mysqli_fetch_array($data)){
@@ -65,6 +69,7 @@ while($d = mysqli_fetch_array($data)){
                 <a href="logout.php">Logout</a>
             </button></td>
         </tr>
+
 </table>
 </form>
 </body>
