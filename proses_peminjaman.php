@@ -9,11 +9,11 @@ $penerbit = $_POST["penerbit"];
 $id = $_POST["id"];
 $proses = $_POST["proses"];
 if ($proses == "insert"){
-    $sql = "INSERT INTO mpenerbit(namaPenerbit,status) VALUES('$penerbit',1)";
+    $sql = "call spTrperpus('pinjam','$NIK','0',$idbuku,$idanggota)";
 } else {
     $sql = "UPDATE mpenerbit SET namaPenerbit = '$penerbit' WHERE idPenerbit = '$id'";
 }
-
+//call spTrperpus('kembali','NIK','$Nomor pinjam',0,0)
 // Buat query insert datanya
 
 

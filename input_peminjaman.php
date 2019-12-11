@@ -8,6 +8,8 @@ $sql = "SELECT * FROM manggota WHERE status = 1";
 $item = mysqli_query($conn, $sql);
 $sql1 = "SELECT * FROM mbuku WHERE status = 1";
 $item1 = mysqli_query($conn, $sql1);
+$sql2 = "SELECT * FROM mpetugas WHERE status = 1";
+$item2 = mysqli_query($conn, $sql2);
 $proses = $_GET['proses'];
 if ($proses =="update"){
     $id = $_GET['nomorPeminjaman'];
@@ -54,23 +56,35 @@ if ($proses =="update"){
         <tr>
             <td>Nama Anggota</td>
             <td>:</td>
-            <td><input type="text" name="anggota" value="<?php echo $anggota ?>"></td>
+            <td>
+                <select name="nama_anggota" id="">
+                    <?php while ($row2 =  mysqli_fetch_array($item)):;?>
+                        <option value=<?php echo $row2[0]; ?>><?php echo $row2[1]; ?></option>
+                    <?php endwhile; ?>
+                </select>
+            </td>
         </tr>
         <tr>
             <td>Nama Buku</td>
             <td>:</td>
-            <td><input type="text" name="buku" value="<?php echo $buku ?>"></td>
-        </tr>
-        <tr>
-            <td>Tanggal Peminjaman</td>
-            <td>:</td>
-            <td><input type="date" name="tanggal" value="<?php echo $tanggal ?>"></td>
-            <td><input type="hidden" name="id" value="<?php echo $id ?>"></td>
+            <td>
+                <select name="nama_anggota" id="">
+                    <?php while ($row2 =  mysqli_fetch_array($item1)):;?>
+                        <option value=<?php echo $row2[0]; ?>><?php echo $row2[3]; ?></option>
+                    <?php endwhile; ?>
+                </select>
+            </td>
         </tr>
         <tr>
             <td>NIK</td>
             <td>:</td>
-            <td><input type="text" name="buku" value="<?php echo $NIK ?>"></td>
+            <td>
+                <select name="nama_anggota" id="">
+                    <?php while ($row2 =  mysqli_fetch_array($item2)):;?>
+                        <option value=<?php echo $row2[0]; ?>><?php echo $row2[1]; ?></option>
+                    <?php endwhile; ?>
+                </select>
+            </td>
         </tr>
         <tr>
             <td><input type="submit" name="simpan" value="Simpan"></td>
