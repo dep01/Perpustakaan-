@@ -13,3 +13,5 @@
 -penambahan procedure spTrperpus di mySql
 call spTrperpus('pinjam','NIK','Nomor pinjam',idBuku,idAnggota) untuk peminjaman
 call spTrperpus('kembali','NIK','Nomor pinjam',0,0) untuk pengembalian
+11/12/2019
+-alter spTrperpus, execute file spTrperpus didalam folder db\storedProcedure\alter\spTrperpus 
