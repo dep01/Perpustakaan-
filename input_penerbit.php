@@ -48,15 +48,15 @@ if ($proses =="update"){
             <td>:</td>
             <td>
                 <select name="penerbit" id="">
-                <?php while ($row1 =  mysqli_fetch_array($item1)):;?>
-                <option value=<?php echo $row1[0]; ?>><?php echo $row1[1]; ?></option>
-                <?php endwhile; ?>
+                
+                <option value=""></option>
+                >
                 </select>
             </td>
         </tr>
         <tr>
-            <td>Penerbit</td>
-            <td>:</td>
+            <td></td>
+            <td></td>
             <td><input type="text" name="penerbit" value=""></td>
         </tr>
         <tr>
@@ -65,13 +65,17 @@ if ($proses =="update"){
         </tr>
         <tr>
             <td><input type="submit" name="simpan" value="Simpan"></td>
+            <td></td>
+            <td><input type="submit" name="hapus" value="Hapus"></td>
         </tr>
         </tr>
     </table>
 </form>
 
     <tr>
-        <td colspan="2" align="center"><br></script></td>
+        <td colspan="2" align="right"><button>
+            <a href="logout.php">Logout</a>
+        </button></td>
     </tr>
     
 </table>

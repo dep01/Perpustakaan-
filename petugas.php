@@ -58,7 +58,9 @@ while($d = mysqli_fetch_array($data)){
     </td>
     </tr>
         <tr>
-            <td colspan="2" align="center"><br></td>
+            <td colspan="2" align="right"><button>
+                <a href="logout.php">Logout</a>
+            </button></td>
         </tr>
 </table>
 </form>

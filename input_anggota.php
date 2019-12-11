@@ -80,7 +80,9 @@ if ($proses =="update"){
 </form>
 
     <tr>
-        <td colspan="2" align="center"><br></script></td>
+        <td colspan="2" align="right"><button>
+            <a href="logout.php">Logout</a>
+        </button></td>
     </tr>
     
 </table>

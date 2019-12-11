@@ -42,9 +42,18 @@ if ($proses =="update"){
             <form method="POST" action="proses_Jbuku.php">
             <table border="0">
             </td>
-        <tr>
-            <td>Jenis Buku</td>
+        </tr>
+        <td>Jenis Buku</td>
             <td>:</td>
+            <td>
+                <select name="penerbit" id="">
+                
+                <option value=""></option>
+                >
+                </select>    
+        <tr>
+            <td></td>
+            <td></td>
             <td><input type="text" name="jenis_buku" value=""></td>
         </tr>
         <tr>
@@ -53,13 +62,17 @@ if ($proses =="update"){
         </tr>
         <tr>
             <td><input type="submit" name="simpan" value="Simpan"></td>
+            <td></td>
+            <td><input type="submit" name="hapus" value="Hapus"></td>
         </tr>
         </tr>
     </table>
 </form>
 
     <tr>
-        <td colspan="2" align="center"><br></script></td>
+        <td colspan="2" align="right"><button>
+            <a href="logout.php">Logout</a>
+        </button></td>
     </tr>
     
 </table>

@@ -47,31 +47,47 @@ if ($proses =="update"){
             <form method="POST" action="proses_peminjaman.php?proses=<?php echo $proses ?>">
             <table border="0">
             </td>
-        <tr>
+         <tr>
             <td>Nomor Peminjaman</td>
             <td>:</td>
-            <td><input type="text" name="no_pinjam" value="<?php echo $id ?>"></td>
+            <td>
+                <select name="nomor_pinjam" id="">
+                
+                <option value=""></option>
+
+                </select>
+            </td>
         </tr>
         <tr>
-            <td>Nama Anggota</td>
+            <td>Tanggal Pengembalian</td>
             <td>:</td>
-            <td><input type="text" name="anggota" value="<?php echo $anggota ?>"></td>
+            <td><input type="date" name="tanggal" value=""></td>
+            <td><input type="hidden" name="id" value=""></td>
         </tr>
         <tr>
-            <td>Nama Buku</td>
+            <td>Lama Pinjaman</td>
             <td>:</td>
-            <td><input type="text" name="buku" value="<?php echo $buku ?>"></td>
+            <td><input type="text" name="lama_pinjam" value=""></td>
         </tr>
         <tr>
-            <td>Tanggal Peminjaman</td>
+            <td>Telat</td>
             <td>:</td>
-            <td><input type="date" name="tanggal" value="<?php echo $tanggal ?>"></td>
-            <td><input type="hidden" name="id" value="<?php echo $id ?>"></td>
+            <td><input type="text" name="telat" value=""></td>
+        </tr>
+        <tr>
+            <td>Denda</td>
+            <td>:</td>
+            <td><input type="text" name="denda" value=""></td>
+        </tr>
+        <tr>
+            <td>Total Denda</td>
+            <td>:</td>
+            <td><input type="text" name="total_denda" value=""></td>
         </tr>
         <tr>
             <td>NIK</td>
             <td>:</td>
-            <td><input type="text" name="buku" value="<?php echo $NIK ?>"></td>
+            <td><input type="text" name="buku" value=""></td>
         </tr>
         <tr>
             <td><input type="submit" name="simpan" value="Simpan"></td>

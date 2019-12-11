@@ -20,7 +20,7 @@
     </tr>
     <tr>
         <td width="500" align="center">
-            <a href="input_petugas.php?proses=<?php echo 'insert';?>">Input Pengembalian</a>
+            <a href="input_pengembalian.php?proses=<?php echo 'insert';?>">Input Pengembalian</a>
             <table border="1" >
         <thead>  
           <tr>
@@ -58,7 +58,11 @@ while($d = mysqli_fetch_array($data)){
     </td>
     </tr>
         <tr>
-            <td colspan="2" align="center"><br></td>
+            <td colspan="2" align="right">
+                <button>
+                    <a href="logout.php">Logout</a>
+                </button>
+            </td>
         </tr>
 </table>
 </form>
