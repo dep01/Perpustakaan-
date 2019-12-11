@@ -1,5 +1,7 @@
 <?php
+
 include 'koneksi.php';
+
 $sql = "SELECT * FROM mjkelamin";
 $item = mysqli_query($conn, $sql);
 $proses = $_GET['proses'];
