@@ -35,12 +35,7 @@
     </tr>
 <tbody>
 <?php
-session_start();
 
-if( !isset($_SESSION["login"]) ){
-    header("Location: login.php");
-    exit;
-}
 include 'koneksi.php';
 $no = 1;
 $data = mysqli_query($conn, "SELECT * FROM manggota A INNER JOIN mjkelamin B ON A.idJkelamin = B.idJkelamin where A.status = 1");
