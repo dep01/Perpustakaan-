@@ -15,6 +15,9 @@
             <a href="petugas.php">Petugas</a> ||
             <a href="pinjam.php">Peminjaman Buku</a> ||
             <a href="pengembalian.php">Pengembalian Buku</a>
+            <button>
+            <a href="logout.php">Logout</a>
+            </button>
         <ul>
     </tr>
 <tbody>

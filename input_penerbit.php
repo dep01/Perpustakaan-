@@ -42,6 +42,18 @@ if ($proses =="update"){
             <form method="POST" action="proses_penerbit.php">
             <table border="0">
             </td>
+        </tr>
+        <tr>
+            <td>Penerbit</td>
+            <td>:</td>
+            <td>
+                <select name="penerbit" id="">
+                <?php while ($row1 =  mysqli_fetch_array($item1)):;?>
+                <option value=<?php echo $row1[0]; ?>><?php echo $row1[1]; ?></option>
+                <?php endwhile; ?>
+                </select>
+            </td>
+        </tr>
         <tr>
             <td>Penerbit</td>
             <td>:</td>
