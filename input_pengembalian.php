@@ -59,32 +59,6 @@ if ($proses =="update"){
             </td>
         </tr>
         <tr>
-            <td>Tanggal Pengembalian</td>
-            <td>:</td>
-            <td><input type="date" name="tanggal" value=""></td>
-            <td><input type="hidden" name="id" value=""></td>
-        </tr>
-        <tr>
-            <td>Lama Pinjaman</td>
-            <td>:</td>
-            <td><input type="text" name="lama_pinjam" value=""></td>
-        </tr>
-        <tr>
-            <td>Telat</td>
-            <td>:</td>
-            <td><input type="text" name="telat" value=""></td>
-        </tr>
-        <tr>
-            <td>Denda</td>
-            <td>:</td>
-            <td><input type="text" name="denda" value=""></td>
-        </tr>
-        <tr>
-            <td>Total Denda</td>
-            <td>:</td>
-            <td><input type="text" name="total_denda" value=""></td>
-        </tr>
-        <tr>
             <td>NIK</td>
             <td>:</td>
             <td><input type="text" name="buku" value=""></td>
