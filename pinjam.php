@@ -30,6 +30,7 @@
             <th>Nama Buku</th>
             <th>Tanggal Peminjaman</th>
             <th>NIK</th>
+            <td>Status</td>
           </tr>
         </thead>
     </tr>
@@ -51,6 +52,7 @@ while($d = mysqli_fetch_array($data)){
 	    <td><?php echo $d['judulBuku']; ?></td>
         <td><?php echo $d['tglPinjam'] ?></td>
 	    <td><?php echo $d['NIK']; ?></td>
+        <td><?php echo $d["status"]; ?></td>
 	</tr>
 <?php }	?>
 </tbody>
