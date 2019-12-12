@@ -11,7 +11,7 @@ $petugas = $_POST["nama_petugas"];
 //$sql = "CALL spTrperpus('pinjam','$nama','0',$buku,$petugas)"; coba dicek bedanya dimana
 $sql = "CALL spTrperpus('pinjam','$petugas','0',$buku,'$nama')";
 
-//call spTrperpus('kembali','NIK','$Nomor pinjam',0,0)
+// call spTrperpus('kembali','NIK','$Nomor pinjam',0,0)
 // Buat query insert datanya
 // Jalankan query
 // isset digunakan untuk jika salah satu inputan tidak ter-input data tidak masuk ke database

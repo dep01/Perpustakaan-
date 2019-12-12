@@ -19,16 +19,7 @@ if ($proses =="update"){
     $qu =  "SELECT * FROM tblpeminjaman WHERE nomorPeminjaman = $id";
     $data = mysqli_query($conn, $qu);
     $d = mysqli_fetch_array($data);
-    $NIK = $d['NIK'];
-    $tanggal = $d['tglPinjam'];
-    $NIK = $d['NIK'];
-} else {
-    $id ="";
-    $anggota = "";
-    $buku = "";
-    $tanggal = "";
-    $NIK = "";     
-}
+} 
 ?>
 
 <html>
