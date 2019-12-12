@@ -5,14 +5,12 @@ session_start();
 if (!isset($_SESSION['username'])){
 header ("location:login.php");
 }
-$penerbit = $_POST["penerbit"];
-$id = $_POST["id"];
-$proses = $_POST["proses"];
-if ($proses == "insert"){
-    $sql = "call spTrperpus('pinjam','$NIK','0',$idbuku,$idanggota)";
-} else {
-    $sql = "UPDATE mpenerbit SET namaPenerbit = '$penerbit' WHERE idPenerbit = '$id'";
-}
+$nama = $_POST["nama_anggota"];
+$buku = $_POST["nama_buku"];
+$petugas = $_POST["nama_petugas"];
+$sql = "CALL spTrperpus('pinjam','$nama','0',$buku,$petugas)";
+
+
 //call spTrperpus('kembali','NIK','$Nomor pinjam',0,0)
 // Buat query insert datanya
 

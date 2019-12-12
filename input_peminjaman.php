@@ -6,18 +6,20 @@ if (!isset($_SESSION['username'])){
     }
 $sql = "SELECT * FROM manggota WHERE status = 1";
 $item = mysqli_query($conn, $sql);
+
 $sql1 = "SELECT * FROM mbuku WHERE status = 1";
 $item1 = mysqli_query($conn, $sql1);
+
 $sql2 = "SELECT * FROM mpetugas WHERE status = 1";
 $item2 = mysqli_query($conn, $sql2);
+
 $proses = $_GET['proses'];
 if ($proses =="update"){
     $id = $_GET['nomorPeminjaman'];
     $qu =  "SELECT * FROM tblpeminjaman WHERE nomorPeminjaman = $id";
     $data = mysqli_query($conn, $qu);
     $d = mysqli_fetch_array($data);
-    $anggota = $d['idAnggota'];
-    $buku = $d['idBuku'];
+    $NIK = $d['NIK'];
     $tanggal = $d['tglPinjam'];
     $NIK = $d['NIK'];
 } else {
@@ -68,7 +70,7 @@ if ($proses =="update"){
             <td>Nama Buku</td>
             <td>:</td>
             <td>
-                <select name="nama_anggota" id="">
+                <select name="nama_buku" id="">
                     <?php while ($row2 =  mysqli_fetch_array($item1)):;?>
                         <option value=<?php echo $row2[0]; ?>><?php echo $row2[3]; ?></option>
                     <?php endwhile; ?>
@@ -76,10 +78,10 @@ if ($proses =="update"){
             </td>
         </tr>
         <tr>
-            <td>NIK</td>
+            <td>Nama Petugas</td>
             <td>:</td>
             <td>
-                <select name="nama_anggota" id="">
+                <select name="nama_petugas" id="">
                     <?php while ($row2 =  mysqli_fetch_array($item2)):;?>
                         <option value=<?php echo $row2[0]; ?>><?php echo $row2[1]; ?></option>
                     <?php endwhile; ?>
