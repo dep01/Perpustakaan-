@@ -42,7 +42,7 @@ if (!isset($_SESSION['username'])){
 header ("location:login.php");
 }
 $no = 1;
-$data = mysqli_query($conn, "SELECT * FROM tblpeminjaman A INNER JOIN manggota B ON A.idAnggota = B.idAnggota INNER JOIN mbuku C ON A.idBuku = C.idBuku");
+$data = mysqli_query($conn, "SELECT *,A.status as statusPinjam FROM tblpeminjaman A INNER JOIN manggota B ON A.idAnggota = B.idAnggota INNER JOIN mbuku C ON A.idBuku = C.idBuku");
 while($d = mysqli_fetch_array($data)){
 ?>
 	<tr>
@@ -52,7 +52,7 @@ while($d = mysqli_fetch_array($data)){
 	    <td><?php echo $d['judulBuku']; ?></td>
         <td><?php echo $d['tglPinjam'] ?></td>
 	    <td><?php echo $d['NIK']; ?></td>
-        <td><?php echo $d["status"]; ?></td>
+        <td><?php echo $d["statusPinjam"]; ?></td>
 	</tr>
 <?php }	?>
 </tbody>
