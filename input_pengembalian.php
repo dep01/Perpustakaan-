@@ -4,26 +4,19 @@ session_start();
 if (!isset($_SESSION['username'])){
 header ("location:login.php");
 }
-$sql = "SELECT * FROM manggota WHERE status = 1";
+
+$sql = "SELECT * FROM tblpeminjaman";
 $item = mysqli_query($conn, $sql);
-$sql1 = "SELECT * FROM mbuku WHERE status = 1";
-$item1 = mysqli_query($conn, $sql1);
+
 $proses = $_GET['proses'];
 if ($proses =="update"){
     $id = $_GET['nomorPeminjaman'];
-    $qu =  "SELECT * FROM tblpeminjaman WHERE nomorPeminjaman = $id";
+    $qu =  "SELECT * FROM tblpengembalian WHERE nomorPeminjaman = $id";
     $data = mysqli_query($conn, $qu);
     $d = mysqli_fetch_array($data);
-    $anggota = $d['idAnggota'];
-    $buku = $d['idBuku'];
-    $tanggal = $d['tglPinjam'];
-    $NIK = $d['NIK'];
+    $nik = $d["nik"];
 } else {
-    $id ="";
-    $anggota = "";
-    $buku = "";
-    $tanggal = "";
-    $NIK = "";     
+    $nik = "";
 }
 ?>
 
@@ -56,16 +49,36 @@ if ($proses =="update"){
             <td>:</td>
             <td>
                 <select name="nomor_pinjam" id="">
-                
-                <option value=""></option>
-
+                    <?php while ($row2 =  mysqli_fetch_array($item)):;?>
+                        <option value=<?php echo $row2[0]; ?>><?php echo $row2[0]; ?></option>
+                    <?php endwhile; ?>
                 </select>
             </td>
         </tr>
         <tr>
-            <td>NIK</td>
+            <td>Lama Peminjaman</td>
             <td>:</td>
-            <td><input type="text" name="buku" value=""></td>
+            <td><input type="text" name="lama_pinjam" value=""></td>
+        </tr>
+        <tr>
+            <td>Telat</td>
+            <td>:</td>
+            <td><input type="text" name="telat" value=""></td>
+        </tr>
+        <tr>
+            <td>Denda</td>
+            <td>:</td>
+            <td><input type="text" name="denda" value=""></td>
+        </tr>
+        <tr>
+            <td>Total Denda</td>
+            <td>:</td>
+            <td><input type="text" name="total_denda" value=""></td>
+        </tr>
+        <tr>
+            <td>NIK Petugas</td>
+            <td>:</td>
+            <td><input type="text" name="nik" value="<?php echo $d["nik"]; ?>"></td>
         </tr>
         <tr>
             <td><input type="submit" name="simpan" value="Simpan"></td>

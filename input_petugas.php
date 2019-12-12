@@ -12,10 +12,6 @@ if ($proses =="update"){
     $qu =  "SELECT * FROM mpetugas WHERE nik = $nik";
     $data = mysqli_query($conn, $qu);
     $d = mysqli_fetch_array($data);
-    if (!$data) {
-        printf("Error: %s\n", mysqli_error($conn));
-        exit();
-    }
     $nama = $d['namaPetugas'];
     $kelamin = $d['idJkelamin'];
     $alamat = $d['alamat'];

@@ -29,7 +29,7 @@
             <th>Nama Anggota</th>
             <th>Nama Buku</th>
             <th>Tanggal Peminjaman</th>
-            <th>NIK</th>
+            <th>NIK Petugas</th>
             <td>Status</td>
           </tr>
         </thead>

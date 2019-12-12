@@ -31,7 +31,7 @@
             <th>Telat</th>
             <th>Denda</th>
             <th>Total Denda</th>
-            <th>NIK</th>
+            <th>NIK Petugas</th>
           </tr>
         </thead>
     </tr>
