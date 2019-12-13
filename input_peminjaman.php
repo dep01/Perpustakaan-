@@ -42,10 +42,10 @@ if ($proses =="update"){
             </td>
         </tr>
         <tr>
-            <td width="500" align="center">
-            <form method="POST" action="proses_peminjaman.php?proses=<?php echo $proses ?>">
-            <table border="0">
-            </td>
+        <td width="500" align="center">
+        <form method="POST" action="proses_peminjaman.php?proses=<?php echo $proses ?>">
+        <table border="0">
+        </td>
         <tr>
             <td>Nama Anggota</td>
             <td>:</td>
@@ -83,18 +83,18 @@ if ($proses =="update"){
             <td><input type="submit" name="simpan" value="Simpan"></td>
         </tr>
         </tr>
-    </table>
-</form>
-
+    </form>
+</table>
     <tr>
         <td colspan="2" align="right">
             <button>
-                <a href="logout.php">Logout</a>
+                <a href="daftar.php" style="text-decoration:none;">Daftar</a>
+            </button>
+            <button>
+                <a href="logout.php" style="text-decoration:none;">Logout</a>
             </button>
         </td>
-    </tr>
-    
+    </tr>   
 </table>
-
 </body>
 </html>

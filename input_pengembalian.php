@@ -86,16 +86,16 @@ if ($proses =="update"){
         </tr>
     </table>
 </form>
-
     <tr>
         <td colspan="2" align="right">
             <button>
-                <a href="logout.php">Logout</a>
+                <a href="daftar.php" style="text-decoration:none;">Daftar</a>
+            </button>
+            <button>
+                <a href="logout.php" style="text-decoration:none;">Logout</a>
             </button>
         </td>
-    </tr>
-    
+    </tr>  
 </table>
-
 </body>
 </html>

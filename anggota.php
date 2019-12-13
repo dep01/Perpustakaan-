@@ -52,19 +52,23 @@ while($d = mysqli_fetch_array($data)){
 	    <td><?php echo $d['alamat']; ?></td>
 	    <td><?php echo $d['noHP']; ?></td>
         <td>
-            <a href="input_anggota.php?id=<?php echo $d["idAnggota"];?>&proses=update" style="text-decoration: none;">Ubah</a> | <a href="proses_anggota.php?id=<?php echo $d["idAnggota"];?>&proses=delete" style="text-decoration: none;">Hapus</a>
+            <a href="input_anggota.php?id=<?php echo $d["idAnggota"];?>&proses=update" style="text-decoration: none;">Ubah</a> | 
+            <a href="proses_anggota.php?id=<?php echo $d["idAnggota"];?>&proses=delete" style="text-decoration: none;">Hapus</a>
         </td> 
 	</tr>
 <?php }	?>
 </tbody>
 </table>
-    </td>
+    <tr>
+        <td colspan="2" align="right">
+            <button>
+                <a href="daftar.php" style="text-decoration:none;">Daftar</a>
+            </button>
+            <button>
+                <a href="logout.php" style="text-decoration:none;">Logout</a>
+            </button>
+        </td>
     </tr>
-        <tr>
-            <td colspan="2" align="right"><button>
-                <a href="logout.php" style="text-decoration: none;">Logout</a>
-            </button></td>
-        </tr>
 </table>
 </form>
 </body>

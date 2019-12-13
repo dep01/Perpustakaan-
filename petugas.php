@@ -60,13 +60,16 @@ while($d = mysqli_fetch_array($data)){
 <?php }	?>
 </tbody>
 </table>
-    </td>
-    </tr>
-        <tr>
-            <td colspan="2" align="right"><button>
-                <a href="logout.php" style="text-decoration: none;">Logout</a>
-            </button></td>
-        </tr>
+    <tr>
+        <td colspan="2" align="right">
+            <button>
+                <a href="daftar.php" style="text-decoration:none;">Daftar</a>
+            </button>
+            <button>
+                <a href="logout.php" style="text-decoration:none;">Logout</a>
+            </button>
+        </td>
+    </tr> 
 </table>
 </form>
 </body>

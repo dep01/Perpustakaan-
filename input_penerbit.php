@@ -72,15 +72,19 @@ if ($proses =="update"){
             <td><input type="submit" name="hapus" value="Hapus"></td>
         </tr>
         </tr>
+
     </table>
 </form>
-
     <tr>
-        <td colspan="2" align="right"><button>
-            <a href="logout.php" style="text-decoration: none;">Logout</a>
-        </button></td>
-    </tr>
-    
+        <td colspan="2" align="right">
+            <button>
+                <a href="daftar.php" style="text-decoration:none;">Daftar</a>
+            </button>
+            <button>
+                <a href="logout.php" style="text-decoration:none;">Logout</a>
+            </button>
+        </td>
+    </tr> 
 </table>
 
 </body>
