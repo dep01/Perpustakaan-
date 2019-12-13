@@ -10,17 +10,17 @@
     <tr>
         <td width = "100" align="center">
         <ul>
-            <a href="anggota.php">Anggota</a> ||
-            <a href="buku.php">Buku</a> ||
-            <a href="petugas.php">Petugas</a> ||
-            <a href="pinjam.php">Peminjaman Buku</a> ||
-            <a href="pengembalian.php">Pengembalian Buku</a>
+            <a href="anggota.php" style="text-decoration: none;">Anggota</a> ||
+            <a href="buku.php" style="text-decoration: none;">Buku</a> ||
+            <a href="petugas.php" style="text-decoration: none;">Petugas</a> ||
+            <a href="pinjam.php" style="text-decoration: none;">Peminjaman Buku</a> ||
+            <a href="pengembalian.php" style="text-decoration: none;">Pengembalian Buku</a>
         <ul>
         </td>
     </tr>
     <tr>
         <td width="500" align="center">
-            <a href="input_peminjaman.php?proses=<?php echo 'insert';?>">Input Peminjaman</a>
+            <a href="input_peminjaman.php?proses=<?php echo 'insert';?>" style="text-decoration: none;">Input Peminjaman</a>
             <table border="1" >
         <thead>  
           <tr>
@@ -62,7 +62,7 @@ while($d = mysqli_fetch_array($data)){
         <tr>
             <td colspan="2" align="right">
                 <button>
-                    <a href="logout.php">Logout</a>
+                    <a href="logout.php" style="text-decoration: none;">Logout</a>
                 </button>
             </td>
         </tr>

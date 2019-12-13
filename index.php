@@ -10,17 +10,17 @@
     <tr>
         <td width = "100" align="center">
         <ul>
-            <a href="anggota.php">Anggota</a> ||
-            <a href="buku.php">Buku</a> ||
-            <a href="petugas.php">Petugas</a> ||
-            <a href="pinjam.php">Peminjaman Buku</a> ||
-            <a href="pengembalian.php">Pengembalian Buku</a>
+            <a href="anggota.php" style="text-decoration: none;">Anggota</a> ||
+            <a href="buku.php" style="text-decoration: none;">Buku</a> ||
+            <a href="petugas.php" style="text-decoration: none;">Petugas</a> ||
+            <a href="pinjam.php" style="text-decoration: none;">Peminjaman Buku</a> ||
+            <a href="pengembalian.php" style="text-decoration: none;">Pengembalian Buku</a>
         <ul>
         </td>
     </tr>
     <tr>
         <td width="500" align="center">
-            <a href="input_anggota.php?proses=<?php echo 'insert';?>">Input Anggota</a>
+            <a href="input_anggota.php?proses=<?php echo 'insert';?>" style="text-decoration: none;">Input Anggota</a>
             <table border="1" >
         <thead>  
           <tr>
@@ -52,18 +52,21 @@ while($d = mysqli_fetch_array($data)){
 	    <td><?php echo $d['alamat']; ?></td>
 	    <td><?php echo $d['noHP']; ?></td>
         <td>
-            <a href="input_anggota.php?id=<?php echo $d["idAnggota"];?>&proses=update">Ubah</a> | <a href="proses_anggota.php?id=<?php echo $d["idAnggota"];?>&proses=delete">Hapus</a>
+            <a href="input_anggota.php?id=<?php echo $d["idAnggota"];?>&proses=update" style="text-decoration: none;">Ubah</a> | <a href="proses_anggota.php?id=<?php echo $d["idAnggota"];?>&proses=delete" style="text-decoration: none;">Hapus</a>
         </td> 
 	</tr>
 <?php }	?>
 </tbody>
 </table>
-    </td>
-    </tr>
         <tr>
-            <td colspan="2" align="right"><button>
-                <a href="logout.php">Logout</a>
-            </button></td>
+            <td colspan="2" align="right">
+            <button>
+                <a href="daftar.php" style="text-decoration:none;">Daftar</a>
+            </button>
+            <button>
+                <a href="logout.php" style="text-decoration:none;">Logout</a>
+            </button>
+            </td>
         </tr>
 </table>
 </form>

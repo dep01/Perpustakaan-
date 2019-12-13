@@ -10,17 +10,17 @@
     <tr>
         <td width = "100" align="center">
         <ul>
-            <a href="anggota.php">Anggota</a> ||
-            <a href="buku.php">Buku</a> ||
-            <a href="petugas.php">Petugas</a> ||
-            <a href="pinjam.php">Peminjaman Buku</a> ||
-            <a href="pengembalian.php">Pengembalian Buku</a>
+            <a href="anggota.php" style="text-decoration: none;">Anggota</a> ||
+            <a href="buku.php" style="text-decoration: none;">Buku</a> ||
+            <a href="petugas.php" style="text-decoration: none;">Petugas</a> ||
+            <a href="pinjam.php" style="text-decoration: none;">Peminjaman Buku</a> ||
+            <a href="pengembalian.php" style="text-decoration: none;">Pengembalian Buku</a>
         <ul>
         </td>
     </tr>
     <tr>
         <td width="500" align="center">
-            <a href="input_petugas.php?proses=<?php echo 'insert';?>">Input Petugas</a>
+            <a href="input_petugas.php?proses=<?php echo 'insert';?>" style="text-decoration: none;">Input Petugas</a>
             <table border="1" >
         <thead>  
           <tr>
@@ -53,7 +53,8 @@ while($d = mysqli_fetch_array($data)){
         <td><?php echo $d['alamat'] ?></td>
 	    <td><?php echo $d['noHP']; ?></td>
         <td>
-            <a href="input_petugas.php?nik=<?php echo $d["NIK"];?>&proses=update">Ubah</a> | <a href="proses_petugas.php?nik=<?php echo $d["NIK"];?>&proses=delete">Hapus</a>
+            <a href="input_petugas.php?nik=<?php echo $d["NIK"];?>&proses=update" style="text-decoration: none;">Ubah</a> | 
+            <a href="proses_petugas.php?nik=<?php echo $d["NIK"];?>&proses=delete" style="text-decoration: none;">Hapus</a>
         </td> 
 	</tr>
 <?php }	?>
@@ -63,7 +64,7 @@ while($d = mysqli_fetch_array($data)){
     </tr>
         <tr>
             <td colspan="2" align="right"><button>
-                <a href="logout.php">Logout</a>
+                <a href="logout.php" style="text-decoration: none;">Logout</a>
             </button></td>
         </tr>
 </table>
