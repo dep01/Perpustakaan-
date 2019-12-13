@@ -1,3 +1,14 @@
+<?php
+include 'koneksi.php';
+session_start();
+if (!isset($_SESSION['username'])){
+header ("location:login.php");
+}
+
+$sql = "SELECT * FROM mstatususer WHERE status = 1";
+$item = mysqli_query($conn, $sql);
+
+?>
 <html>
 <head>
     <title>Pendaftaran</title>
@@ -12,21 +23,21 @@
         <td>NIK</td>
         <td>:</td>
         <td>
-            <input type="text" name="nama">
+            <input type="text" name="nik">
         </td>
     </tr>
     <tr>
         <td>Username</td> 
         <td>:</td>
         <td>
-            <input type="text" name="email">
+            <input type="text" name="username">
         </td>
     </tr>
     <tr>
         <td>Password</td>
         <td>:</td>
         <td>
-            <input type="text" name="username">
+            <input type="text" name="password">
         </td>
     </tr>
     <tr>
@@ -34,15 +45,15 @@
         <td>:</td>
         <td>
             <select name="status_user" id="">
-            
-            <option value=""></option>
-            
+            <?php while ($row1 =  mysqli_fetch_array($item)):;?>
+            <option value="<?php echo $row1[0]; ?>"><?php echo $row1[1]; ?></option>
+            <?php endwhile; ?>
             </select>
         </td>
     </tr>
     <tr>
         <td colspan=2>&nbsp;</td>
-        <td><input type="submit" name="submit" value="DAFTAR"></td>
+        <td><input type="submit" name="submit" value="Daftar"></td>
     </tr>
     <tr>
         <td colspan=3><a href="login.php" style="text-decoration:none;">LOGIN</a></td>
