@@ -22,10 +22,10 @@ $penerbit = $_POST["namaPenerbit"];
 
 if ($_POST["simpan"]=="Simpan"){
     $sql = "INSERT INTO mpenerbit(namaPenerbit, status) VALUES('$penerbit',1)";
-    $pesan = "Data berhasil ditambahkan :)";
+    $pesan = "Data berhasil ditambahkan";
 } else { 
     $sql = "UPDATE mpenerbit SET status = 9 WHERE namaPenerbit = '$penerbit'";
-    $pesan = "Data berhasil dihapus :)";
+    $pesan = "Data berhasil dihapus";
 }
 
 

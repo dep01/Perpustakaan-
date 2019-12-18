@@ -34,7 +34,7 @@ $hasil = mysqli_query($conn, $sql);
 if ($hasil){
     echo "
         <script>
-        alert('Data berhasil di tambahkan!');
+        alert('$pesan');
         document.location.href = 'index.php';
         </script>
         ";
