@@ -49,15 +49,20 @@ if ($proses =="update"){
         <td>Jenis Buku</td>
             <td>:</td>
             <td>
-                <select name="penerbit" id="">
-                
-                <option value=""></option>
-                >
+            <select name="jenis_buku" id="" onchange="changeValue(this.value)">
+                <option value="add" selected="">--Tambah Penerbit--</option>
+                     <?php 
+                     $jsArray = "var prdName = new Array();\n";
+                     while ($data=mysqli_fetch_array($item)) {
+                    echo '<option value="'.$data['idJenisBuku'].'">'.$data['jenisBuku'].'</option> ';
+                     $jsArray .= "prdName['" . $data['idJenisBuku'] . "'] = {nama:'" . addslashes($data['jenisBuku']) . "'};\n";
+       }
+      ?>
                 </select>    
         <tr>
             <td></td>
             <td></td>
-            <td><input type="text" name="jenis_buku" value=""></td>
+            <td><input type="text" name="jenisBuku" id="jenisBuku"></td>
         </tr>
         <tr>
             <td><input type="hidden" name="id" value=<?php echo $id ?>></td>
@@ -70,6 +75,12 @@ if ($proses =="update"){
         </tr>
         </tr>
     </table>
+    <script type="text/javascript">    
+    <?php echo $jsArray; ?>  
+    function changeValue(x){  
+    document.getElementById('jenisBuku').value = prdName[x].nama;   
+    };  
+    </script> 
 </form>
     <tr>
         <td colspan="2" align="right">

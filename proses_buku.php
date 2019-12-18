@@ -22,11 +22,11 @@ if ($proses == "insert"){
     $sql = "INSERT INTO mbuku(idPenerbit, idJenisBuku, judulBuku, jangkaWaktu, dendaPerhari, tglTerbit,status) VALUES('$penerbit', '$jenis', '$judul', '$jangka', '$denda', '$tanggal',1)";
     $pesan = "Data berhasil ditambahkan!";
 } elseif ($proses =="delete"){
-    $sql = "update mbuku set status = 9 where idBuku = '$id'";
-    $pesan = "Data berhasil dihapus :)";
+    $sql = "UPDATE mbuku SET status = 9 where idBuku = '$id'";
+    $pesan = "Data berhasil dihapus";
 } else {
     $sql = "UPDATE mbuku SET idPenerbit = '$penerbit',idJenisBuku = '$jenis',judulBuku = '$judul',jangkaWaktu = '$jangka',dendaPerhari = '$denda',tglTerbit = '$tanggal' where idBuku = '$id'";
-    $pesan ="Data berhasil di-Update :)";
+    $pesan ="Data berhasil di-Update";
 }
 
 // Buat query insert datanya

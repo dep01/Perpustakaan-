@@ -17,7 +17,7 @@ if ($proses =="update"){
 } else {
     $id ="";
     $nama = "";
-    $status = "";   
+    $status = "";
 }
 ?>
 
@@ -82,7 +82,7 @@ if ($proses =="update"){
     <script type="text/javascript">    
     <?php echo $jsArray; ?>  
     function changeValue(x){  
-    document.getElementById('namaPenerbit').placeholder = prdName[x].nama;   
+    document.getElementById('namaPenerbit').value = prdName[x].nama;   
     };  
     </script> 
 </form>
