@@ -24,6 +24,7 @@ if ($proses =="update"){
     $alamat = "";
     $jk = "";     
 }
+
 ?>
 
 <html>

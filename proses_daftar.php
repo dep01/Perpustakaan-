@@ -8,31 +8,30 @@ header ("location:login.php");
 $nik = $_POST['nik'];
 $username = $_POST['username'];
 $password = $_POST['password'];
-$status = $_POST['status_user']; 
+$status = $_POST['status_user'];
 
-if (empty($nik)){
-    echo "<script>alert('NIK belum di isi')</script>";
-    echo "<meta http-equiv='refresh' content='1 url=daftar.php'>";
-} else if (empty($username)){
-    echo "<script>alert('Username belum di isi')</script>";
-    echo "<meta http-equiv='refresh' content='1 url=daftar.php'>";
-} else if(empty($password)){
-    echo "<script>alert('Password belum di isi')</script>";
-    echo "<meta http-equiv='refresh' content='1 url=daftar.php'>";
-} else if (empty($status)){
-    echo "<script>alert('Status User belum di isi')</script>";
-    echo "<meta http-equiv='refresh' content='1 url=daftar.php'>";
-} else {
-$daftar = mysqli_query("INSERT INTO muser (nik,idUser,password,idStatus,status) values('$nik','$username','$password','$status',1)");
-if (!$daftar) {
+$sql = "INSERT INTO muser(NIK,idUser,password,idStatusUser,status) VALUES('$nik','$username','$password','$status',1)";
+$pesan = "Data Berhasil di-Tambahkan";
+
+
+$hasil = mysqli_query($conn, $sql);
+if (!$hasil) {
     printf("Error: %s\n", mysqli_error($conn));
     exit();
 }
-if ($daftar){
-    echo "<script>alert('Berhasil Mendaftar')</script>";
-    echo "<meta http-equiv='refresh' content='1 url=daftar.php'>";
-} else {
-echo "<script>alert('Gagal Mendaftar')</script>";
-echo "<meta http-equiv='refresh' content='1 url=daftar.php'>";
-}}
+if ($hasil){
+    echo "
+        <script>
+        alert('$pesan');
+        document.location.href = 'index.php';
+        </script>
+        ";
+    } else {
+        echo "
+        <script>
+        alert('Data gagal di tambahkan!');
+        document.location.href = 'index.php';
+        </script>
+        ";
+    }
 ?>
