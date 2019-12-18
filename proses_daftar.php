@@ -23,7 +23,11 @@ if (empty($nik)){
     echo "<script>alert('Status User belum di isi')</script>";
     echo "<meta http-equiv='refresh' content='1 url=daftar.php'>";
 } else {
-$daftar = mysqli_query("INSERT INTO muser (nik,idUser,password,idStatus,status) values ('$nik','$username','$password','$status',1)");
+$daftar = mysqli_query("INSERT INTO muser (nik,idUser,password,idStatus,status) values('$nik','$username','$password','$status',1)");
+if (!$daftar) {
+    printf("Error: %s\n", mysqli_error($conn));
+    exit();
+}
 if ($daftar){
     echo "<script>alert('Berhasil Mendaftar')</script>";
     echo "<meta http-equiv='refresh' content='1 url=daftar.php'>";
