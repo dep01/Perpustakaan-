@@ -7,6 +7,10 @@ header ("location:login.php");
 }
 
 $proses = $_GET["proses"];
+if (!$proses) {
+    printf("Error: %s\n", mysqli_error($conn));
+    exit();
+}
 if ($proses=="delete"){
     $id = $_GET["id"];
 } else {
