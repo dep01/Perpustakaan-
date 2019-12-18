@@ -57,7 +57,6 @@ if ($proses =="update"){
                      while ($data=mysqli_fetch_array($item)) {
                     echo '<option value="'.$data['idPenerbit'].'">'.$data['namaPenerbit'].'</option> ';
                      $jsArray .= "prdName['" . $data['idPenerbit'] . "'] = {nama:'" . addslashes($data['namaPenerbit']) . "'};\n";
-      
        }
       ?>
                 </select>
