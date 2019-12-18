@@ -20,7 +20,7 @@ header ("location:login.php");
 $id = $_POST["id"];
 $penerbit = $_POST["namaPenerbit"];
 
-if ($_POST["hapus"]=="simpan"){
+if ($_POST["simpan"]=="Simpan"){
     $sql = "INSERT INTO mpenerbit(namaPenerbit, status) VALUES('$penerbit',1)";
     $pesan = "Data berhasil ditambahkan!";
 } else {
