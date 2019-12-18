@@ -56,29 +56,29 @@ if ($proses =="update"){
             </td>
         </tr>
         <tr>
+            <td>Tanggal Peminjaman</td>
+            <td>:</td>
+            <td><input type="text" name="tgl_pinjam" value="" disabled="true"></td>
+        </tr>
+        <tr>
             <td>Lama Peminjaman</td>
             <td>:</td>
-            <td><input type="text" name="lama_pinjam" value=""></td>
+            <td><input type="text" name="lama_pinjam" value="" disabled="true"></td>
         </tr>
         <tr>
             <td>Telat</td>
             <td>:</td>
-            <td><input type="text" name="telat" value=""></td>
+            <td><input type="text" name="telat" value="" disabled="true"></td>
         </tr>
         <tr>
             <td>Denda</td>
             <td>:</td>
-            <td><input type="text" name="denda" value=""></td>
+            <td><input type="text" name="denda" value="" disabled="true"></td>
         </tr>
         <tr>
             <td>Total Denda</td>
             <td>:</td>
-            <td><input type="text" name="total_denda" value=""></td>
-        </tr>
-        <tr>
-            <td>NIK Petugas</td>
-            <td>:</td>
-            <td><input type="text" name="nik" value="<?php echo $d["nik"]; ?>"></td>
+            <td><input type="text" name="total_denda" value="" disabled="true"></td>
         </tr>
         <tr>
             <td><input type="submit" name="simpan" value="Simpan"></td>
