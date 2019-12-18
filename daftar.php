@@ -8,6 +8,8 @@ header ("location:login.php");
 
 $sql = "SELECT * FROM mstatususer WHERE status = 1";
 $item = mysqli_query($conn, $sql);
+$sql1 = "SELECT * FROM mpetugas WHERE status = 1";
+$item1 = mysqli_query($conn, $sql1);
 
 ?>
 <html>
@@ -24,7 +26,11 @@ $item = mysqli_query($conn, $sql);
         <td>NIK</td>
         <td>:</td>
         <td>
-            <input type="text" name="nik">
+            <select name="nik" id="">
+            <?php while ($row2 =  mysqli_fetch_array($item1)):;?>
+            <option value=<?php echo $row2[0]; ?>><?php echo $row2[0]; ?></option>
+            <?php endwhile; ?>
+            </select>
         </td>
     </tr>
     <tr>
