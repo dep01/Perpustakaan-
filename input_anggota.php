@@ -48,7 +48,7 @@ if ($proses =="update"){
         </tr>
         <tr>
             <td width="500" align="center">
-            <form method="post" action="proses_anggota.php?proses = <?php echo $proses ?>">
+            <form method="post" action="proses_anggota.php?proses=<?php echo $proses ?>">
             <table border="0">
             </td>
         <tr>

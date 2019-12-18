@@ -6,11 +6,7 @@ if (!isset($_SESSION['username'])){
 header ("location:login.php");
 }
 
-$proses = $_GET["proses"];
-if (!$proses) {
-    printf("Error: %s\n", mysqli_error($conn));
-    exit();
-}
+$proses = $_GET['proses'];
 if ($proses=="delete"){
     $id = $_GET["id"];
 } else {
@@ -18,7 +14,6 @@ if ($proses=="delete"){
     $JKelamin = $_POST["jenis_kelamin"];
     $alamat = $_POST["alamat"];
     $telp = $_POST["noHP"];
-    $proses = $_POST["proses"];
     $id = $_POST["id"];
 }
 $pesan = "";
