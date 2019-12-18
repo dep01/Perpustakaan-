@@ -71,7 +71,7 @@ if ($proses =="update"){
         <tr>
             <td><input type="submit" name="simpan" value="Simpan"></td>
             <td></td>
-            <td><input type="submit" name="hapus" value="Hapus"></td>
+            <td><input type="submit" name="simpan" value="Hapus"></td>
         </tr>
         </tr>
     </table>
