@@ -83,6 +83,16 @@ if ($proses =="update"){
             <td><input type="text" name="judul_buku" value="<?php echo $judul ?>"></td>
         </tr>
         <tr>
+            <td>Jumlah Buku</td>
+            <td>:</td>
+            <td><input type="text" name="jumlah_buku" value=""></td>
+        </tr>
+        <tr>
+            <td>Lokasi Buku</td>
+            <td>:</td>
+            <td><input type="text" name="lokasi_buku" value=""></td>
+        </tr>
+        <tr>
             <td>Jangka Waktu</td>
             <td>:</td>
             <td><input type="text" name="jangka_waktu" value="<?php echo $jangka ?>"></td>
