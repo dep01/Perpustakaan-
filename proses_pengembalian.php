@@ -5,12 +5,10 @@ session_start();
 if (!isset($_SESSION['username'])){
 header ("location:login.php");
 }
-$nama = $_POST["nama_anggota"];
-$buku = $_POST["nama_buku"];
-$petugas = $_POST["nama_petugas"];
+$nomorpinjam = $_POST["nomor_pinjam"];
 //$sql = "CALL spTrperpus('pinjam','$nama','0',$buku,$petugas)"; coba dicek bedanya dimana
-$sql = "CALL spTrperpus('pinjam','$petugas','0',$buku,'$nama')";
 
+$sql = "CALL spTrperpus('get','0','$nomorpinjam',0,0)";
 
 // call spTrperpus('kembali','NIK','$Nomor pinjam',0,0)
 // Buat query insert datanya
