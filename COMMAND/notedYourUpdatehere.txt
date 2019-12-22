@@ -15,3 +15,7 @@ call spTrperpus('pinjam','NIK','Nomor pinjam',idBuku,idAnggota) untuk peminjaman
 call spTrperpus('kembali','NIK','Nomor pinjam',0,0) untuk pengembalian
 11/12/2019
 -alter spTrperpus, execute file spTrperpus didalam folder db\storedProcedure\alter\spTrperpus 
+
+22/12/20119
+-call spTrperpus('get','0','Nomor pinjam',0,0) buat ngambil data buku yang dipinjam pas select data dari combobox
+-alter spTrperpus, execute file spTrperpus didalam folder db\storedProcedure\alter\spTrperpus22122019 
