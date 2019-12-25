@@ -16,14 +16,23 @@ header ("location:login.php");
 
 $id = $_POST["id"];
 $Jbuku = $_POST["jenisBuku"];
+$idJenis = $_POST["jenis_buku"];
 
 if ($_POST["simpan"]=="Simpan"){
-    $sql = "INSERT INTO mjenisbuku(jenisBuku, status) VALUES('$Jbuku',1)";
-    $pesan = "Data berhasil ditambahkan!";
+    if ($idJenis == "add"){
+        $sql = "INSERT INTO mjenisbuku(jenisBuku, status) VALUES('$Jbuku',1)";
+        $pesan = "Data berhasil ditambahkan!";
+    } else {
+        $sql = "UPDATE mjenisbuku SET jenisBuku = '$Jbuku' WHERE idJenisBuku = '$idJenis'";
+        $pesan = "Data berhasil di Update";
+    }
+    
 } else { 
     $sql = "UPDATE mjenisbuku SET status = 9 WHERE jenisBuku = '$Jbuku'";
     $pesan = "Data berhasil dihapus";
 }
+
+
 
 // Buat query insert datanya
 

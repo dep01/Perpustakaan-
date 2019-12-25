@@ -8,7 +8,7 @@ header ("location:login.php");
 $nomorpinjam = $_POST["nomor_pinjam"];
 //$sql = "CALL spTrperpus('pinjam','$nama','0',$buku,$petugas)"; coba dicek bedanya dimana
 
-$sql = "CALL spTrperpus('get','0','$nomorpinjam',0,0)";
+$sql = "CALL spTrperpus('get','$nomorpinjam','0',0,0)";
 
 // call spTrperpus('kembali','NIK','$Nomor pinjam',0,0)
 // Buat query insert datanya

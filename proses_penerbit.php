@@ -19,10 +19,17 @@ header ("location:login.php");
 // Buat query insert datanya
 $id = $_POST["id"];
 $penerbit = $_POST["namaPenerbit"];
+$idPenerbit = $_POST["penerbit"];
 
 if ($_POST["simpan"]=="Simpan"){
-    $sql = "INSERT INTO mpenerbit(namaPenerbit, status) VALUES('$penerbit',1)";
-    $pesan = "Data berhasil ditambahkan";
+    if ($idPenerbit == "add"){
+        $sql = "INSERT INTO mpenerbit(namaPenerbit, status) VALUES('$penerbit',1)";
+        $pesan = "Data berhasil ditambahkan";
+    }else{
+        $sql = "UPDATE mpenerbit SET namaPenerbit = '$penerbit' WHERE idPenerbit = '$idPenerbit'";
+        $pesan = "Data berhasil di Update";
+    }
+
 } else { 
     $sql = "UPDATE mpenerbit SET status = 9 WHERE namaPenerbit = '$penerbit'";
     $pesan = "Data berhasil dihapus";
