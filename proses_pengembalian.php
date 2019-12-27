@@ -4,11 +4,13 @@ include "koneksi.php";
 session_start();
 if (!isset($_SESSION['username'])){
 header ("location:login.php");
+}else{
+    $NIK = $_SESSION['NIKUSER'];
 }
 $nomorpinjam = $_POST["nomor_pinjam"];
 //$sql = "CALL spTrperpus('pinjam','$nama','0',$buku,$petugas)"; coba dicek bedanya dimana
 
-$sql = "CALL spTrperpus('get','$nomorpinjam','0',0,0)";
+$sql = "CALL spTrperpus('kembali','$NIK','$nomorpinjam',0,0)";
 
 // call spTrperpus('kembali','NIK','$Nomor pinjam',0,0)
 // Buat query insert datanya
