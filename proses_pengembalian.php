@@ -4,7 +4,7 @@ include "koneksi.php";
 session_start();
 if (!isset($_SESSION['username'])){
 header ("location:login.php");
-}else{
+} else {
     $NIK = $_SESSION['NIKUSER'];
 }
 $nomorpinjam = $_POST["nomor_pinjam"];

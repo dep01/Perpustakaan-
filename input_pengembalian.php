@@ -8,15 +8,18 @@ header ("location:login.php");
 $sql = "SELECT * FROM tblpeminjaman";
 $item = mysqli_query($conn, $sql);
 
+$sql1 = "CALL spTrperpus('get','0','$sql',0,0)";
+$item1 = mysqli_query($conn, $sql1);
+
 $proses = $_GET['proses'];
 if ($proses =="update"){
-    $id = $_GET['nomorPeminjaman'];
-    $qu =  "SELECT * FROM tblpengembalian WHERE nomorPeminjaman = $id";
+    $nopinjam = $_GET['nomorPeminjaman'];
+    $qu = "CALL spTrperpus('get','0','$nopinjam',0,0)";
     $data = mysqli_query($conn, $qu);
     $d = mysqli_fetch_array($data);
     $nik = $d["nik"];
 } else {
-    $nik = "";
+    $nik = ""; 
 }
 ?>
 
@@ -41,7 +44,7 @@ if ($proses =="update"){
         </tr>
         <tr>
             <td width="500" align="center">
-            <form method="POST" action="proses_pengembalian.php?proses=<?php echo $proses ?>">
+            <form method="POST" action="proses_pengembalian.php">
             <table border="0">
             </td>
          <tr>
@@ -53,6 +56,17 @@ if ($proses =="update"){
                         <option value=<?php echo $row2[0]; ?>><?php echo $row2[0]; ?></option>
                     <?php endwhile; ?>
                 </select>
+
+                <!-- <select name="nomor_pinjam" id="" onchange="changeValue(this.value)">
+                <option value="add" selected=""></option>
+                     <?php 
+                     $jsArray = "var prdName = new Array();\n";
+                     while ($data = mysqli_fetch_array($item)) {
+                    echo '<option value="'.$data['nomorPeminjaman'].'">'.$data['tglPinjam'].$data['PlamaPinjam'].$data['Ptelat'].$data['Pdenda'].$data['PtotalDenda'].'</option> ';
+                     $jsArray .= "prdName['" . $data['nomorPeminjaman'] . "'] = {nama:'" . addslashes($data['tglPinjam'],$data['PlamaPinjam'],$data['Ptelat'],$data['Pdenda'],$data['PtotalDenda']) . "'};\n";
+       }
+      ?>
+                </select> -->
             </td>
         </tr>
         <tr>
@@ -85,6 +99,12 @@ if ($proses =="update"){
         </tr>
         </tr>
     </table>
+    <script type="text/javascript">    
+    <?php echo $jsArray; ?>  
+    function changeValue(x){  
+    document.getElementById('nomorPinjam').value = prdName[x].nama;   
+    };  
+    </script> 
 </form>
     <tr>
         <td colspan="2" align="right">

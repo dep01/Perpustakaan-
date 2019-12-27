@@ -6,6 +6,7 @@ header ("location:login.php");
 }
 $sql = "SELECT * FROM mpenerbit WHERE status = 1";
 $item = mysqli_query($conn, $sql);
+
 $proses = $_GET['proses'];
 if ($proses =="update"){
     $id = $_GET['idPenerbit'];
