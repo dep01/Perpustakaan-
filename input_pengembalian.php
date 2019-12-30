@@ -8,9 +8,6 @@ header ("location:login.php");
 $sql = "SELECT * FROM tblpeminjaman";
 $item = mysqli_query($conn, $sql);
 
-$sql1 = "CALL spTrperpus('get','0','$sql',0,0)";
-$item1 = mysqli_query($conn, $sql1);
-
 $proses = $_GET['proses'];
 if ($proses =="update"){
     $nopinjam = $_GET['nomorPeminjaman'];
@@ -51,60 +48,45 @@ if ($proses =="update"){
             <td>Nomor Peminjaman</td>
             <td>:</td>
             <td>
-                <select name="nomor_pinjam" id="">
+                <select name="nomor_pinjam" id="no_pinjam">
+                    <option value="">Pilih No Pinjaman</option>
                     <?php while ($row2 =  mysqli_fetch_array($item)):;?>
                         <option value=<?php echo $row2[0]; ?>><?php echo $row2[0]; ?></option>
                     <?php endwhile; ?>
                 </select>
-
-                <!-- <select name="nomor_pinjam" id="" onchange="changeValue(this.value)">
-                <option value="add" selected=""></option>
-                     <?php 
-                     $jsArray = "var prdName = new Array();\n";
-                     while ($data = mysqli_fetch_array($item)) {
-                    echo '<option value="'.$data['nomorPeminjaman'].'">'.$data['tglPinjam'].$data['PlamaPinjam'].$data['Ptelat'].$data['Pdenda'].$data['PtotalDenda'].'</option> ';
-                     $jsArray .= "prdName['" . $data['nomorPeminjaman'] . "'] = {nama:'" . addslashes($data['tglPinjam'],$data['PlamaPinjam'],$data['Ptelat'],$data['Pdenda'],$data['PtotalDenda']) . "'};\n";
-       }
-      ?>
-                </select> -->
             </td>
         </tr>
         <tr>
             <td>Tanggal Peminjaman</td>
             <td>:</td>
-            <td><input type="text" name="tgl_pinjam" value="" disabled="true"></td>
+            <td><input id="tglPinjam" type="text" name="tgl_pinjam" value="" disabled="true"></td>
         </tr>
         <tr>
             <td>Lama Peminjaman</td>
             <td>:</td>
-            <td><input type="text" name="lama_pinjam" value="" disabled="true"></td>
+            <td><input type="text" name="lama_pinjam" id="lama_pinjam" value="" disabled="true"></td>
         </tr>
         <tr>
             <td>Telat</td>
             <td>:</td>
-            <td><input type="text" name="telat" value="" disabled="true"></td>
+            <td><input type="text" name="telat" id="telat"value="" disabled="true"></td>
         </tr>
         <tr>
             <td>Denda</td>
             <td>:</td>
-            <td><input type="text" name="denda" value="" disabled="true"></td>
+            <td><input type="text" name="denda" id="denda" value="" disabled="true" ></td>
         </tr>
         <tr>
             <td>Total Denda</td>
             <td>:</td>
-            <td><input type="text" name="total_denda" value="" disabled="true"></td>
+            <td><input type="text" name="total_denda" id="total_denda" value="" disabled="true"></td>
         </tr>
         <tr>
             <td><input type="submit" name="simpan" value="Simpan"></td>
         </tr>
         </tr>
     </table>
-    <script type="text/javascript">    
-    <?php echo $jsArray; ?>  
-    function changeValue(x){  
-    document.getElementById('nomorPinjam').value = prdName[x].nama;   
-    };  
-    </script> 
+   
 </form>
     <tr>
         <td colspan="2" align="right">
@@ -117,5 +99,24 @@ if ($proses =="update"){
         </td>
     </tr>  
 </table>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    $("#no_pinjam").change(function(){
+        var id = $(this).val();
+        $.ajax({
+            url: 'process/getCode.php?id='+id,
+            type: "get",
+            dataType: 'json',
+            success : function(data){
+                $('#tglPinjam').val(data.tglPinjam),
+                $('#denda').val(data.Pdenda),
+                $('#lama_pinjam').val(data.PlamaPinjam),
+                $('#telat').val(data.Ptelat),
+                $('#total_denda').val(data.PtotalDenda)
+            }
+        })
+    });
+</script>
 </body>
 </html>
