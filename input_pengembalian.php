@@ -109,11 +109,13 @@ if ($proses =="update"){
             type: "get",
             dataType: 'json',
             success : function(data){
+               
                 $('#tglPinjam').val(data.tglPinjam),
                 $('#denda').val(data.Pdenda),
                 $('#lama_pinjam').val(data.PlamaPinjam),
                 $('#telat').val(data.Ptelat),
-                $('#total_denda').val(data.PtotalDenda)
+                $('#total_denda').val(data.PtotalDenda),
+                console.log(data)
             }
         })
     });
