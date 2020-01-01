@@ -5,7 +5,7 @@ if (!isset($_SESSION['username'])){
 header ("location:login.php");
 }
 
-$sql = "SELECT * FROM tblpeminjaman";
+$sql = "SELECT * FROM tblpeminjaman WHERE status = 'pinjam'";
 $item = mysqli_query($conn, $sql);
 
 $proses = $_GET['proses'];

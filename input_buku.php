@@ -6,8 +6,13 @@ header ("location:login.php");
 }
 $sql = "SELECT * FROM mjenisbuku WHERE status = 1";
 $item = mysqli_query($conn, $sql);
+
 $sql1 = "SELECT * FROM mpenerbit WHERE status = 1";
 $item1 = mysqli_query($conn, $sql1);
+
+$sql2 = "SELECT * FROM mrakbuku WHERE status = 1";
+$item2 = mysqli_query($conn, $sql2);
+
 $proses = $_GET['proses'];
 if ($proses =="update"){
     $id = $_GET['id'];
@@ -90,7 +95,23 @@ if ($proses =="update"){
         <tr>
             <td>Lokasi Buku</td>
             <td>:</td>
-            <td><input type="text" name="lokasi_buku" value=""></td>
+            <td>
+            <select name="lokasi_buku" id="" onchange="changeValue(this.value)">
+                <option value="add" selected="">--Lokasi Buku--</option>
+                     <?php 
+                     $jsArray = "var prdName = new Array();\n";
+                     while ($data=mysqli_fetch_array($item2)) {
+                    echo '<option value="'.$data['idRakBuku'].'">'.$data['namaRak'].'</option> ';
+                     $jsArray .= "prdName['" . $data['idRakBuku'] . "'] = {nama:'" . addslashes($data['namaRak']) . "'};\n";
+       }
+      ?>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td><input type="text" name="namaRak" id="namaRak" value=""></td>
         </tr>
         <tr>
             <td>Jangka Waktu</td>
@@ -113,6 +134,12 @@ if ($proses =="update"){
         </tr>
         </tr>
     </table>
+    <script type="text/javascript">    
+    <?php echo $jsArray; ?>  
+    function changeValue(x){  
+    document.getElementById('namaRak').value = prdName[x].nama;   
+    };  
+    </script> 
 </form>
     <tr>
         <td colspan="2" align="right">
