@@ -22,7 +22,8 @@
         <td width="500" align="center">
             <a href="input_buku.php?proses=<?php echo 'insert'; ?>" style="text-decoration: none;">Input Buku</a> ||
             <a href="input_penerbit.php?proses=<?php echo 'insert'; ?>" style="text-decoration: none;">Input Penerbit</a> || 
-            <a href="input_Jbuku.php?proses=<?php echo 'insert'; ?>" style="text-decoration: none;">Input Jenis Buku</a>
+            <a href="input_Jbuku.php?proses=<?php echo 'insert'; ?>" style="text-decoration: none;">Input Jenis Buku</a> ||
+            <a href="input_rakbuku.php?proses=<?php echo 'insert'; ?>" style="text-decoration: none;">Input Rak Buku</a>
             <table border="1" >
         <thead>  
           <tr>

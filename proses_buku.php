@@ -29,24 +29,6 @@ if ($proses == "insert"){
     $pesan ="Data berhasil di-Update";
 }
 
-$id = $_POST["id"];
-$rak = $_POST["namaRak"];
-$idRak = $_POST["lokasi_buku"];
-
-if ($_POST["simpan"]=="Simpan"){
-    if ($idRak == "add"){
-        $sql = "INSERT INTO mrakbuku(namaRak, status) VALUES('$rak',1)";
-        $pesan = "Data berhasil ditambahkan";
-    }else{
-        $sql = "UPDATE mrakbuku SET namaRak = '$rak' WHERE idRakBuku = '$idRak'";
-        $pesan = "Data berhasil di Update";
-    }
-
-} else { 
-    $sql = "UPDATE mrakbuku SET status = 9 WHERE namaRak = '$rak'";
-    $pesan = "Data berhasil dihapus";
-}
-
 // Buat query insert datanya
 
 

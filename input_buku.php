@@ -93,27 +93,6 @@ if ($proses =="update"){
             <td><input type="text" name="jumlah_buku" value=""></td>
         </tr>
         <tr>
-            <td>Lokasi Buku</td>
-            <td>:</td>
-            <td>
-            <select name="lokasi_buku" id="" onchange="changeValue(this.value)">
-                <option value="add" selected="">--Lokasi Buku--</option>
-                     <?php 
-                     $jsArray = "var prdName = new Array();\n";
-                     while ($data=mysqli_fetch_array($item2)) {
-                    echo '<option value="'.$data['idRakBuku'].'">'.$data['namaRak'].'</option> ';
-                     $jsArray .= "prdName['" . $data['idRakBuku'] . "'] = {nama:'" . addslashes($data['namaRak']) . "'};\n";
-       }
-      ?>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td><input type="text" name="namaRak" id="namaRak" value=""></td>
-        </tr>
-        <tr>
             <td>Jangka Waktu</td>
             <td>:</td>
             <td><input type="text" name="jangka_waktu" value="<?php echo $jangka ?>"></td>
@@ -134,12 +113,6 @@ if ($proses =="update"){
         </tr>
         </tr>
     </table>
-    <script type="text/javascript">    
-    <?php echo $jsArray; ?>  
-    function changeValue(x){  
-    document.getElementById('namaRak').value = prdName[x].nama;   
-    };  
-    </script> 
 </form>
     <tr>
         <td colspan="2" align="right">
