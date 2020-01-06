@@ -36,7 +36,7 @@ if ($proses =="update"){
         <tr>
             <td width = "200" align="center">
                 <ul>
-                    <a href="anggota.php" style="text-decoration: none;">Anggota</a> ||
+                    <a href="anggota.php" >Anggota</a> ||
                     <a href="buku.php" style="text-decoration: none;">Buku</a> ||
                     <a href="petugas.php" style="text-decoration: none;">Petugas</a> ||
                     <a href="pinjam.php" style="text-decoration: none;">Peminjaman Buku</a> ||
