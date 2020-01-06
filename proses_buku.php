@@ -16,10 +16,14 @@ if ($proses=="delete"){
     $denda = $_POST["denda"];
     $tanggal = $_POST["tgl_terbit"];
     $id = $_POST["id"];
+    $tersedia = $_POST["jumlah_buku"];
+    $idrak = $_POST["lokasi_buku"];
 }
 $pesan = "";
 if ($proses == "insert"){
     $sql = "INSERT INTO mbuku(idPenerbit, idJenisBuku, judulBuku, jangkaWaktu, dendaPerhari, tglTerbit,status) VALUES('$penerbit', '$jenis', '$judul', '$jangka', '$denda', '$tanggal',1)";
+    $sql1 = "INSERT INTO tbljumlahbuku(idBuku, jumlahBukuTersedia, jumlahBukuTerpinjam, idRakBuku) VALUES((SELECT MAX(idBuku) FROM mbuku), $tersedia, 0, $idrak)";
+    $hasil = mysqli_query($conn, $sql1);
     $pesan = "Data berhasil ditambahkan!";
 } elseif ($proses =="delete"){
     $sql = "UPDATE mbuku SET status = 9 where idBuku = '$id'";

@@ -83,6 +83,17 @@ if ($proses =="update"){
             </td>
         </tr>
         <tr>
+            <td>Lokasi Buku</td>
+            <td>:</td>
+            <td>
+                <select name="lokasi_buku" id="">
+                <?php while ($row2 =  mysqli_fetch_array($item2)):;?>
+                <option value=<?php echo $row2[0]; ?>><?php echo $row2[1]; ?></option>
+                <?php endwhile; ?>
+                </select>
+            </td>
+        </tr>
+        <tr>
             <td>Judul Buku</td>
             <td>:</td>
             <td><input type="text" name="judul_buku" value="<?php echo $judul ?>"></td>
