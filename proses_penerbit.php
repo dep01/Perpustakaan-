@@ -34,7 +34,7 @@ if ($_POST["simpan"]=="Simpan"){
     $sql = "UPDATE mpenerbit SET status = 9 WHERE namaPenerbit = '$penerbit'";
     $pesan = "Data berhasil dihapus";
 }
-
+ 
 
 // Jalankan query
 // isset digunakan untuk jika salah satu inputan tidak ter-input data tidak masuk ke database
