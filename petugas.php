@@ -1,28 +1,40 @@
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="assets/css/app.css">
 </head>
 <body>
-<form action="" method="POST">
-<table width="1200" border="2" align="center">
-    <tr>
-        <td colspan="2" align="center"><h1>Sistem Informasi Perpustakaan</h1></td>
-    </tr>
-    <tr>
-        <td width = "100" align="center">
-        <ul>
-            <a href="anggota.php" style="text-decoration: none;">Anggota</a> ||
-            <a href="buku.php" style="text-decoration: none;">Buku</a> ||
-            <a href="petugas.php" style="text-decoration: none;">Petugas</a> ||
-            <a href="pinjam.php" style="text-decoration: none;">Peminjaman Buku</a> ||
-            <a href="pengembalian.php" style="text-decoration: none;">Pengembalian Buku</a>
-        <ul>
-        </td>
-    </tr>
-    <tr>
-        <td width="500" align="center">
-            <a href="input_petugas.php?proses=<?php echo 'insert';?>" style="text-decoration: none;">Input Petugas</a>
-            <table border="1" >
-        <thead>  
+
+    <div class="card">
+        <div class="card-body">
+
+    <style type="text/css">
+        .pagination li{
+            float: left;
+            list-style-type: none;
+            margin: 5px;
+        }
+    </style>
+
+    <h1>Sistem Informasi Perpustakaan</h1>
+    <div class="form-grup"></div>
+    <form action="" method="POST" class="form-inline">
+    </form>
+
+        <a href="anggota.php" class="btn btn-primary ml-1" style="text-decoration: none;">Anggota</a>
+        <a href="buku.php" class="btn btn-primary ml-1" style="text-decoration: none;">Buku</a>
+        <a href="petugas.php" class="btn btn-primary ml-1" style="text-decoration: none;">Petugas</a>
+        <a href="pinjam.php" class="btn btn-primary ml-1" style="text-decoration: none;">Peminjaman Buku</a>
+        <a href="pengembalian.php" class="btn btn-primary ml-1" style="text-decoration: none;">Pengembalian Buku</a>
+
+        <br>
+        <br>
+
+        <a href="input_petugas.php?proses=<?php echo 'insert';?>" style="text-decoration: none;">+Input Petugas</a>
+
+        <br>
+        <br>
+
+        <table class="table table-bordered" border="3">  
           <tr>
             <th>No</th>
             <th>NIK</th>
@@ -32,8 +44,7 @@
             <th>Nomor HP</th>
             <th>Aksi</th>
           </tr>
-        </thead>
-    </tr>
+    
 <tbody>
 <?php 
 include 'koneksi.php';
@@ -53,13 +64,14 @@ while($d = mysqli_fetch_array($data)){
         <td><?php echo $d['alamat'] ?></td>
 	    <td><?php echo $d['noHP']; ?></td>
         <td>
-            <a href="input_petugas.php?nik=<?php echo $d["NIK"];?>&proses=update" style="text-decoration: none;">Ubah</a> | 
-            <a href="proses_petugas.php?nik=<?php echo $d["NIK"];?>&proses=delete" style="text-decoration: none;">Hapus</a>
+            <a class="btn btn-warning btn-sm" href="input_petugas.php?nik=<?php echo $d["NIK"];?>&proses=update" style="text-decoration: none;">Ubah</a> 
+            <a class="btn btn-danger btn-sm" href="proses_petugas.php?nik=<?php echo $d["NIK"];?>&proses=delete" style="text-decoration: none;">Hapus</a>
         </td> 
 	</tr>
 <?php }	?>
 </tbody>
 </table>
+<br>
     <tr>
         <td colspan="2" align="right">
             <button>
