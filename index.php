@@ -1,6 +1,7 @@
 
 <html>
 <head>
+    <title>PERPUSTAKAAN</title>
     <link rel="stylesheet" type="text/css" href="assets/css/app.css">
 </head>
 <body>

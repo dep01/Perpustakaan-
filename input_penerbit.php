@@ -24,6 +24,7 @@ if ($proses =="update"){
 
 <html>
 <head>
+    <title>PERPUSTAKAAN</title>
     <link rel="stylesheet" type="text/css" href="assets/css/app.css">
 </head>
 <body>
@@ -52,7 +53,7 @@ if ($proses =="update"){
         
         <br>
         <br>
-        
+
         <tr>
             <td width="500" align="center">
             <form method="POST" action="proses_penerbit.php">

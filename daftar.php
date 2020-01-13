@@ -14,7 +14,7 @@ $item1 = mysqli_query($conn, $sql1);
 ?>
 <html>
 <head>
-    <title>Pendaftaran</title>
+    <title>PENDAFTARAN</title>
 </head>
 <body>
 <form method="post" name="pendaftaran" action="proses_daftar.php">
