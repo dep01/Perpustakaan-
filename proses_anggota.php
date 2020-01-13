@@ -22,10 +22,10 @@ if ($proses == "insert"){
     $pesan = "Data berhasil ditambahkan!";
 } elseif ($proses =="delete"){
     $sql = "update manggota set status = 9 where idanggota = '$id'";
-    $pesan = "Data berhasil dihapus :)";
+    $pesan = "Data berhasil dihapus";
 } else {
     $sql = "UPDATE manggota SET namaAnggota = '$nama',noHP = '$telp',alamat ='$alamat',idjkelamin = '$JKelamin' where idanggota = '$id'";
-    $pesan ="Data berhasil di-Update :)";
+    $pesan ="Data berhasil di-Update";
 }
 
 // Buat query insert datanya
