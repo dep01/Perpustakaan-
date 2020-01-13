@@ -6,7 +6,6 @@
 </head>
 <body>
 
-    <div class="container">
         <div class="card">
             <div class="card-body">
 
@@ -65,7 +64,7 @@ while($d = mysqli_fetch_array($data)){
 	    <td><?php echo $d['alamat']; ?></td>
 	    <td><?php echo $d['noHP']; ?></td>
         <td>
-            <a class="btn btn-warning btn-sm" href="input_anggota.php?id=<?php echo $d["idAnggota"];?>&proses=update" style="text-decoration: none;">Ubah</a> | 
+            <a class="btn btn-warning btn-sm" href="input_anggota.php?id=<?php echo $d["idAnggota"];?>&proses=update" style="text-decoration: none;">Ubah</a> 
             <a class="btn btn-danger btn-sm" href="proses_anggota.php?id=<?php echo $d["idAnggota"];?>&proses=delete" style="text-decoration: none;">Hapus</a>
         </td> 
 	</tr>
