@@ -114,17 +114,17 @@ if ($proses =="update"){
         <tr>
             <td>Jumlah Buku</td>
             <td>:</td>
-            <td><input type="text" name="jumlah_buku" value=""></td>
+            <td><input type="text" name="jumlah_buku" value=""onkeypress="return event.charCode >= 48 && event.charCode <= 57"></td>
         </tr>
         <tr>
             <td>Jangka Waktu</td>
             <td>:</td>
-            <td><input type="text" name="jangka_waktu" value="<?php echo $jangka ?>"></td>
+            <td><input type="text" name="jangka_waktu" value="<?php echo $jangka ?>" onkeypress="return event.charCode >= 48 && event.charCode <= 57"></td>
         </tr>
         <tr>
             <td>Denda Perhari</td>
             <td>:</td>
-            <td><input type="text" name="denda" value="<?php echo $denda ?>"></td>
+            <td><input type="text" name="denda" value="<?php echo $denda ?>"onkeypress="return event.charCode >= 48 && event.charCode <= 57"></td>
         </tr>
         <tr>
             <td>Tanggal Terbit</td>

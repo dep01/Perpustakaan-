@@ -64,7 +64,7 @@ if ($proses =="update"){
         <tr>
             <td>NIK</td>
             <td>:</td>
-            <td><input type="text" name="nik" value="<?php echo $nik ?>" maxlength="12"></td>
+            <td><input type="text" name="nik" value="<?php echo $nik ?>" maxlength="12"onkeypress="return event.charCode >= 48 && event.charCode <= 57"></td>
         </tr>
         <tr>
             <td>Nama Petugas</td>
@@ -90,7 +90,7 @@ if ($proses =="update"){
         <tr>
             <td>Nomor Telepon</td>
             <td>:</td>
-            <td><input type="text" name="no_telp" value="<?php echo $nohp ?>"></td>
+            <td><input type="text" name="no_telp" value="<?php echo $nohp ?>"onkeypress="return event.charCode >= 48 && event.charCode <= 57"></td>
         </tr>
         <tr>
             <td><input type="submit" name="simpan" value="Simpan"></td>

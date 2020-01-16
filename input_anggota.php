@@ -88,7 +88,7 @@ if ($proses =="update"){
         <tr>
             <td>No. HP</td>
             <td>:</td>
-            <td><input type="text" name="noHP" value=<?php echo $hp ?>></td>
+            <td><input type="text" name="noHP" value=<?php echo $hp ?>onkeypress="return event.charCode >= 48 && event.charCode <= 57"></td>
             <td><input type="hidden" name="id" value=<?php echo $id ?>></td>
         </tr>
         <tr>

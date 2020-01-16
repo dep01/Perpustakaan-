@@ -18,7 +18,7 @@ header ("location:index.php");
     <tr>
         <td>Username</td>
         <td>:</td>
-        <td><input type="text" name="username"></td>
+        <td><input type="text" name="username" ></td>
     </tr>
     <tr>
         <td>Password</td>
